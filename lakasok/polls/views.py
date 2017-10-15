@@ -2,10 +2,17 @@
 
 # Create your views here.
 from django.http import HttpResponse
+from django.template import loader
+from .models import Adds
 
 def index(request):
-	return HttpResponse("Hello itt vagyok!")
+	list = Adds.objects.order_by('id')
+	template = loader.get_template('polls/index.html')
+	context = {
+		'latest_question_list': list,
+	}
+	return HttpResponse(template.render(context, request))
 
-def adds(request, owner):
+def adds(request, id):
 	response = "You are searchingfor the %s"
-	return HttpResponse(response % owner)
+	return HttpResponse(response % id)
