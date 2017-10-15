@@ -1,17 +1,19 @@
 #from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
+#from django.http import HttpResponse
+from django.http import Http404
+from django.shortcuts import get_object_or_404
 from django.template import loader
+from django.shortcuts import render
 from .models import Adds
 
 def index(request):
-	list = Adds.objects.order_by('id')
-	template = loader.get_template('polls/index.html')
+	list = Adds.objects
 	context = {
-		'latest_question_list': list,
+		'list': list,
 	}
-	return HttpResponse(template.render(context, request))
+	return render(request, 'polls/index.html', context)
 
 def adds(request, id):
 	response = "You are searchingfor the %s"
