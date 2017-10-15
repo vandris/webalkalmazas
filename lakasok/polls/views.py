@@ -6,6 +6,6 @@ from django.http import HttpResponse
 def index(request):
 	return HttpResponse("Hello itt vagyok!")
 
-def adds(request, id):
+def adds(request, owner):
 	response = "You are searchingfor the %s"
-	return HttpResponse(response % id)
+	return HttpResponse(response % owner)
