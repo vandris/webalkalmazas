@@ -8,6 +8,9 @@ class Users(models.Model):
     age = models.IntegerField(default=40)
     valid = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.email
+
 class Adds(models.Model):
     owner = models.CharField(max_length=200)
     squaremeter = models.IntegerField(default=40)
@@ -23,6 +26,9 @@ class Adds(models.Model):
     lift = models.BooleanField(default=False)
     view = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.owner
+
 
 class Messages(models.Model):
     sender = models.CharField(max_length=200)
@@ -30,3 +36,6 @@ class Messages(models.Model):
     message = models.CharField(max_length=5000)
     valid = models.BooleanField(default=True)
     unread = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.message
