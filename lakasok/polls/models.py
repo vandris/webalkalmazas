@@ -11,6 +11,8 @@ class Users(models.Model):
 
 class Adds(models.Model):
     owner = models.CharField(max_length=200)
+    country = models.CharField(max_length=200, default='')
+    address = models.CharField(max_length=200, default='')
     squaremeter = models.IntegerField(default=40)
     price = models.IntegerField(default=10000)
     type = models.CharField(max_length=50)
