@@ -1,7 +1,7 @@
 {% if list %}
     <ul>
 		{% for adds in list %}
-			<li><a href="/polls/{{ adds.id }}/">{{ adds.id }}</a></li>
+			<li><a href="/polls/{{ adds.id }}/">{{ adds.owner }}</a> {{adds.wall}}</li>
 		{% endfor %}
     </ul>
 {% else %}
