@@ -1,0 +1,9 @@
+{% if list %}
+    <ul>
+		{% for adds in list %}
+			<li><a href="/polls/{{ adds.id }}/">{{ adds.id }}</a></li>
+		{% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
