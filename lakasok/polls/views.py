@@ -15,7 +15,7 @@ def index(request):
 	context = {
 		'list': list
 	}
-	return render(request, 'polls/index.html', context)
+	return render(request, 'polls/index3.html', context)
 
 def adds(request, id):
 	response = "You are searchingfor the %s"

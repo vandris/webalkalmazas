@@ -1,0 +1,167 @@
+<html>
+<head>
+	<style>
+		body{color: #8b795e;}
+	   .vízszintesjobb{ text-shadow: 1px 0px 0px black;}
+		a.one:link {color:#8b795e;text-decoration:none;}
+		a.one:visited {color:#8b795e;text-decoration:none;}
+		a.one:hover {color:#000000;text-decoration:none;}
+	</style>
+	<meta charset="charset=iso-8859-2">
+	<style type="text/css">
+		body {font-family: cursive;}
+		.button1 {
+			background-color: #fce6c9; 
+			color: #8b795e; 
+			border: 2px solid #D2B48C;
+			transition-duration: 0.4s;
+			padding: 5px 30px;
+			font-size: 15px;
+		}
+		.button1:hover {
+			background-color: #D2B48C;
+			color: white;
+		}
+	</style>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Lakáshirdetõ portál</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body bgcolor="#d2b48c" link = "" alink="" vlink = "">
+	<section class="container">
+		<table border = 3 bgcolor = "fce6c9" align = "center">
+			<tr><td>
+			<table width = 1200 align = "center" border = 0>
+				<tr>
+					<td height = 100 colspan = 2 align = "left" background = "">
+						<p><img src="logo.png"></p>
+					</td>
+					<td colspan = 3 align = "right" valign = "center">
+						<p><span ><a class = "one" href=""><font size= 4>Bejelentkezés/Regisztráció</a>&nbsp&nbsp&nbsp</font></p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan = 5><hr color = "8b795e"></td>
+				</tr>
+				<tr height = 50 align = "center">
+					<td width = "20%"><a class = "one" href="http://index.hu"><font size= 4>Fõoldal</a></font></td>
+					<td width = "20%"><a class = "one" href=""><font size= 4>Hirdetések</a></font></td>
+					<td width = "20%"><!--<a href="">Link</a>--></td>
+					<td width = "20%"><a class = "one" href=""><font size= 4>Link2</a></font></td>
+					<td width = "20%"><a class = "one" href=""><font size= 4>Link3</font></a></td>
+				</tr>
+				<tr height = 1000>
+					<td colspan = 5 valign = "top">
+						<form action="/felvesz.html">
+						<p><h4>Új hirdetés helvétele</h4></p>
+						<p>Címe:<br>
+						Megye: 
+							<select name = "megye">
+								<option value="ures"></option>
+								<option value="Budapest">Budapest</option>
+								<option value="Bacs-Kiskun">Bács-Kiskun megye</option>
+								<option value="Baranya">Baranya megye</option>
+								<option value="Bekes">Békés megye</option>
+								<option value="Borsod-Abauj">Borsod-Abaúj-Zemplén megye</option>
+								<option value="Csongrad">Csongrád megye</option>
+								<option value="Fejer">Fejér megye</option>
+								<option value="Gyor-Moson-Sopron">Gyõr-Moson-Sopron megye</option>
+								<option value="Hajdu-Bihar">Hajdú-Bihar megye</option>
+								<option value="Heves">Heves megye</option>
+								<option value="Jazs-Nagykun-Szolnok">Jász-Nagykun-Szolnok megye</option>
+								<option value="Komarom-Esztergom">Komárom-Esztergom megye</option>
+								<option value="Nograd">Nógrád megye</option>
+								<option value="Past">Pest megye</option>
+								<option value="Somogy">Somogy megye</option>
+								<option value="Szabolcs-Szatmar-Bereg">Szabolcs-Szatmár-Bereg megye</option>
+								<option value="Tolna">Tolna megye</option>
+								<option value="Vas">Vas megye</option>
+								<option value="Veszprem">Veszprém megye</option>
+								<option value="Zala">Zala megye</option>
+							</select>
+						Település: <input type="text" name="varos" value="">
+						Utca: <input type="text" name="utca" value="">
+						Házszám: <input type="text" name="hszam" value=""></p>
+						<p>Ház típusa:<br>
+							<select name = "haz">
+								<option value="ures"></option>
+								<option value="panel">Családi</option>
+								<option value="tegla">Társas</option>
+								<option value="valyog">Panel</option>
+								<option value="itong">Iker</option>
+								<option value="egyeb">Egyéb</option>
+							</select></p>
+						<p>Falak típusa:<br>
+							<select name = "fal">
+								<option value="ures"></option>
+								<option value="panel">Panel</option>
+								<option value="tegla">Tégla</option>
+								<option value="valyog">Vályog</option>
+								<option value="ytong">ytong</option>
+								<option value="fa">Fa</option>
+								<option value="ronk">Rönk</option>
+								<option value="ko">Kõ</option>
+								<option value="egyeb">Egyéb</option>
+							</select></p>
+						<p>Fûtés típusa:<br>
+							<select name = "futes">
+								<option value="ures"></option>
+								<option value="panel">Központi</option>
+								<option value="tegla">Kályha</option>
+								<option value="valyog">Cirko</option>
+								<option value="itong">Konvektor</option>
+								<option value="egyeb">Egyéb</option>
+							</select></p>
+						<p>Szobák száma:<br>
+							<input type="number" name="szobaszam" min="0" max="50" value=""></p>
+						<p>Parkolás:<br>
+							<select name = "parkolas">
+								<option value="ures"></option>
+								<option value="panel">Garázs</option>
+								<option value="tegla">Kertben</option>
+								<option value="valyog">Utcán</option>
+								<option value="egyeb">Egyéb</option>
+							</select></p>
+						<p>Lift:<br>
+								<input type="radio" name="lift" value="van">Van<br>
+								<input type="radio" name="lift" value="nincs">Nincs</p>
+						<p>Építés éve:<br>
+							<input type="number" name="ev" min="1000" max="2017" value=""></p>
+						<p>Bútorozott?<br>
+							<input type="radio" name="butor" value="igen">Igen<br>
+							<input type="radio" name="butor" value="nem">Nem</p>
+						<p>Tájolás:<br>
+							<select name = "kilatas">
+								<option value="ures"></option>
+								<option value="panel">Utcára</option>
+								<option value="tegla">Kertben</option>
+								<option value="valyog">Udvarra</option>
+								<option value="egyeb">Egyéb</option>
+							</select></p>
+						<p>Négyzetméter:<br>
+							<input type="number" name="nm" min="0" max="1000000" value=""></p>
+						<p>Ár:<br>
+							<input type="number" name="ar" min="0" max="10000" value=""> millió Ft</p>
+						<p>Ingatlan állapota:<br>
+							<select name = "allapot">
+								<option value="ures"></option>
+								<option value="panel">Felújításra vár</option>
+								<option value="tegla">Felújított</option>
+								<option value="egyeb">Egyéb</option>
+							</select></p>
+						<p><input type="submit" class="button button1" value="Hirdetés felvétele"></p>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td colspan = 5>
+						<p>Kontaktok</p>
+					</td>
+				</tr>
+			</table>
+			</td></tr>
+		</table>
+	</section>
+</body>
+</html>

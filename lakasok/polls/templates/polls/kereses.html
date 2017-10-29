@@ -1,0 +1,229 @@
+<html>
+<head>
+	<style>
+		body{color: #8b795e;}
+	   .vízszintesjobb{ text-shadow: 1px 0px 0px black;}
+		a.one:link {color:#8b795e;text-decoration:none;}
+		a.one:visited {color:#8b795e;text-decoration:none;}
+		a.one:hover {color:#000000;text-decoration:none;}
+	</style>
+	<meta charset="charset=iso-8859-2">
+	<style type="text/css">
+		body {font-family: cursive;}
+		.button1 {
+			background-color: #fce6c9; 
+			color: #8b795e; 
+			border: 2px solid #D2B48C;
+			transition-duration: 0.4s;
+			padding: 5px 30px;
+			font-size: 15px;
+		}
+		.button1:hover {
+			background-color: #D2B48C;
+			color: white;
+		}
+	</style>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Lakáshirdetõ portál</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body bgcolor="#d2b48c" link = "" alink="" vlink = "">
+	<section class="container">
+		<table border = 3 bgcolor = "fce6c9" align = "center">
+			<tr><td>
+			<table width = 1200 align = "center" border = 0>
+				<tr>
+					<td height = 100 colspan = 2 align = "left" background = "">
+						<p><img src="logo.png"></p>
+					</td>
+					<td colspan = 3 align = "right" valign = "center">
+						<p>
+						<a class = "one" href=""><font size= 4>Bejelentkezés/Regisztráció</a>&nbsp&nbsp&nbsp</font>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan = 5><hr color = "8b795e"></td>
+				</tr>
+				<tr height = 50 align = "center">
+					<td width = "20%"><a class = "one" href="http://index.hu"><font size= 4>Fõoldal</a></font></td>
+					<td width = "20%"><a class = "one" href=""><font size= 4><u>Hirdetések</u></a></font></td>
+					<td width = "20%"><!--<a href="">Link</a>--></td>
+					<td width = "20%"><a class = "one" href=""><font size= 4>Link2</a></font></td>
+					<td width = "20%"><a class = "one" href=""><font size= 4>Link3</font></a></td>
+				</tr>
+				<tr height = 1000>
+					<td colspan = 5 valign = "top">
+						<p><br></p>
+						<form action="/keres.html">
+							<table width = 1000 align = "center" border = 0><tr>
+								<td>Megye:<br> 
+									<input type="checkbox" name="megye" value="Budapest">Budapest<br>
+									<input type="checkbox" name="megye" value="Bacs-Kiskun">Bács-Kiskun megye<br>
+									<input type="checkbox" name="megye" value="Baranya">Baranya megye<br>
+									<input type="checkbox" name="megye" value="Bekes">Békés megye<br>
+									<input type="checkbox" name="megye" value="Borsod-Abauj">Borsod-Abaúj-Zemplén megye<br>
+									<input type="checkbox" name="megye" value="Csongrad">Csongrád megye<br>
+									<input type="checkbox" name="megye" value="Fejer">Fejér megye<br>
+									<input type="checkbox" name="megye" value="Gyor-Moson-Sopron">Gyõr-Moson-Sopron megye<br>
+									<input type="checkbox" name="megye" value="Hajdu-Bihar">Hajdú-Bihar megye<br>
+									<input type="checkbox" name="megye" value="Heves">Heves megye<br>
+									<input type="checkbox" name="megye" value="Jazs-Nagykun-Szolnok">Jász-Nagykun-Szolnok megye<br>
+									<input type="checkbox" name="megye" value="Komarom-Esztergom">Komárom-Esztergom megye<br>
+									<input type="checkbox" name="megye" value="Nograd">Nógrád megye<br>
+									<input type="checkbox" name="megye" value="Past">Pest megye<br>
+									<input type="checkbox" name="megye" value="Somogy">Somogy megye<br>
+									<input type="checkbox" name="megye" value="Szabolcs-Szatmar-Bereg">Szabolcs-Szatmár-Bereg megye<br>
+									<input type="checkbox" name="megye" value="Tolna">Tolna megye<br>
+									<input type="checkbox" name="megye" value="Vas">Vas megye<br>
+									<input type="checkbox" name="megye" value="Veszprem">Veszprém megye<br>
+									<input type="checkbox" name="megye" value="Zala">Zala megye
+								</td>
+								<td valign="top">
+									<p>Ház típusa:<br>
+										<input type="checkbox" name="haz" value="csaladi">Családi
+										<input type="checkbox" name="haz" value="tarsas">Társas
+										<input type="checkbox" name="haz" value="panel">Panel
+										<input type="checkbox" name="haz" value="iker">Iker
+										<input type="checkbox" name="haz" value="egyéb">Egyéb
+									</p>
+									<p>Falak típusa:<br>
+										<input type="checkbox" name="fal" value="panel">Panel
+										<input type="checkbox" name="fal" value="tegla">Tégla
+										<input type="checkbox" name="fal" value="valyog">Vályog
+										<input type="checkbox" name="fal" value="ytong">Ytong
+										<input type="checkbox" name="fal" value="fa">Fa
+										<input type="checkbox" name="fal" value="ronk">Rönk
+										<input type="checkbox" name="fal" value="ko">Kõ
+										<input type="checkbox" name="fal" value="egyeb">Egyéb
+									</p>
+									<p>Lift:<br>
+										<input type="radio" name="lift" value="van">Van
+										<input type="radio" name="lift" value="nincs">Nincs
+									</p>
+									<p>Terület:<br><input type="number" name="szobaszam" min="0" max="1000000" value=""></p>
+									<p>Ár:<br><input type="number" name="szobaszam" min="0" max="10000" value=""></p>
+									<p>Építés éve: (legkorábban)<br><input type="number" name="szobaszam" min="1000" max="2017" value=""></p>
+									<p>Rendezés szempontja:<br>
+										<select name = "rendez">
+											<option value="ures"></option>
+											<option value="megye">Megye</option>
+											<option value="haz">Ház típusa</option>
+											<option value="fal">Falak típusa</option>
+											<option value="terulet">Terület</option>
+											<option value="ar">Ár</option>
+											<option value="ev">Építés éve</option>
+										</select>
+									</p>
+									<input type="submit" = "cursive" class="button button1" value="Keres">
+								</td>
+							</tr></table>
+						</form>
+						<p><br><table width = 1000 align = center border = 0>
+							<tr height = 60>
+								<td colspan = 3>
+									<font size = 6>Budapest, Budapest István utca 5.</font>
+								</td>
+								<td>
+									<font size = 6>25,5 M Ft</font>
+								</td>
+							</tr>
+							<tr>
+								<td width = 15%>
+									<b>Alapterület:</b>
+								</td>
+								<td width = 35%>
+									78 m<sup>2</sup>
+								</td>
+								<td width = 20%>
+									<b>Lift</b>
+								</td>
+								<td width = 30%>
+									van
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Ház típusa:</b>
+								</td>
+								<td>
+									családi
+								</td>
+								<td>
+									<b>Bútorozott:</b>
+								</td>
+								<td>
+									Nem
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Falak típusa</b>
+								</td>
+								<td>
+									tégla
+								</td>
+								<td>
+									<b>Parkolás:</b>
+								</td>
+								<td>
+									garázs
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Szobák száma:</b>
+								</td>
+								<td>
+									5
+								</td>
+								<td>
+									<b>Fûtés:</b>
+								</td>
+								<td>
+									cirko
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Ingatlan állapota:</b>
+								</td>
+								<td>
+									felújított
+								</td>
+								<td>
+									<b>Kilátás</b>
+								</td>
+								<td>
+									utcára
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Építés éve:</b>
+								</td>
+								<td>
+									2013
+								</td>
+								<td>
+									<b>Tulajdonos:</b>
+								</td>
+								<td>
+									Tamás
+								</td>
+							</tr>
+						</table></p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan = 5>
+						<p>Kontaktok</p>
+					</td>
+				</tr>
+			</table>
+			</td></tr>
+		</table>
+	</section>
+</body>
+</html>
