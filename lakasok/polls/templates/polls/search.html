@@ -41,7 +41,7 @@
 							<!--<img src="static/webalkalmazas/logo.png" alt="My image"/>--->
 					</td>
 					<td colspan = 3 align = "right" valign = "center">
-						<p><a class = "one" href="/polls/login/"><font size= 4><u>Bejelentkezés/Regisztráció</u></font></a>&nbsp&nbsp&nbsp</p>
+						<p><a class = "one" href="/polls/login/"><font size= 3><u>Bejelentkezés/Regisztráció</u></font></a>&nbsp&nbsp&nbsp</p>
 					</td>
 				</tr>
 				<tr>
@@ -121,100 +121,107 @@
 								</td>
 							</tr></table>
 						</form>
+						{% if list %}
 						<p><br><table width = 1000 align = center border = 0>
-							<tr height = 60>
-								<td colspan = 3>
-									<font size = 6>Budapest, Budapest István utca 5.</font>
-								</td>
-								<td>
-									<font size = 6>25,5 M Ft</font>
-								</td>
-							</tr>
-							<tr>
-								<td width = 15%>
-									<b>Alapterület:</b>
-								</td>
-								<td width = 35%>
-									78 m<sup>2</sup>
-								</td>
-								<td width = 20%>
-									<b>Lift</b>
-								</td>
-								<td width = 30%>
-									van
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<b>Ház típusa:</b>
-								</td>
-								<td>
-									családi
-								</td>
-								<td>
-									<b>Bútorozott:</b>
-								</td>
-								<td>
-									Nem
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<b>Falak típusa</b>
-								</td>
-								<td>
-									tégla
-								</td>
-								<td>
-									<b>Parkolás:</b>
-								</td>
-								<td>
-									garázs
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<b>Szobák száma:</b>
-								</td>
-								<td>
-									5
-								</td>
-								<td>
-									<b>Fűtés:</b>
-								</td>
-								<td>
-									cirko
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<b>Ingatlan állapota:</b>
-								</td>
-								<td>
-									felújított
-								</td>
-								<td>
-									<b>Kilátás</b>
-								</td>
-								<td>
-									utcára
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<b>Építés éve:</b>
-								</td>
-								<td>
-									2013
-								</td>
-								<td>
-									<b>Tulajdonos:</b>
-								</td>
-								<td>
-									Tamás
-								</td>
-							</tr>
+							{% for adds in list %}
+								<tr height = 60>
+									<td colspan = 3>
+										<font size = 6>{{adds.address}}</font>
+									</td>
+									<td>
+										<font size = 6>{{adds.price}} M Ft</font>
+									</td>
+								</tr>
+								<tr>
+									<td width = 15%>
+										<b>Alapterület:</b>
+									</td>
+									<td width = 35%>
+										{{adds.squaremeter}} m<sup>2</sup>
+									</td>
+									<td width = 20%>
+										<b>Lift</b>
+									</td>
+									<td width = 30%>
+										{{adds.lift}}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Ház típusa:</b>
+									</td>
+									<td>
+										{{adds.type}}
+									</td>
+									<td>
+										<b>Bútorozott:</b>
+									</td>
+									<td>
+										{{adds.furnitured}}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Falak típusa</b>
+									</td>
+									<td>
+										{{adds.wall}}
+									</td>
+									<td>
+										<b>Parkolás:</b>
+									</td>
+									<td>
+										{{adds.parking}}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Szobák száma:</b>
+									</td>
+									<td>
+										{{adds.rooms}}
+									</td>
+									<td>
+										<b>Fűtés:</b>
+									</td>
+									<td>
+										{{adds.heating}}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Ingatlan állapota:</b>
+									</td>
+									<td>
+										{{adds.state}}
+									</td>
+									<td>
+										<b>Kilátás</b>
+									</td>
+									<td>
+										{{adds.view}}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Építés éve:</b>
+									</td>
+									<td>
+										{{adds.year}}
+									</td>
+									<td>
+										<b>Tulajdonos:</b>
+									</td>
+									<td>
+										{{adds.owner}}
+									</td>
+								</tr>
+							{% endfor %}
 						</table></p>
+						{% else %}
+						<p>Nincs egyetlen hirdetés sem</p>
+						{% endif %}
+
 					</td>
 				</tr>
 				<tr>

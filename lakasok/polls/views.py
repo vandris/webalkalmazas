@@ -22,7 +22,13 @@ def adds(request, id):
 	return HttpResponse(response % id)
 
 def search(request):
-	return render(request, 'polls/search.html', {})
+	list = Adds.objects.order_by('owner')[:5]
+	'''output = ', '.join([a.owner for a in list])
+	return HttpResponse(output)'''
+	context = {
+		'list': list
+	}
+	return render(request, 'polls/search.html', context)
 
 def login(request):
 	return render(request, 'polls/login.html', {})

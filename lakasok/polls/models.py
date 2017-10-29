@@ -22,9 +22,10 @@ class Adds(models.Model):
     rooms = models.IntegerField(default=3)
     parking = models.CharField(max_length=100)
     year = models.IntegerField(default=2017)
-    furnitured = models.BooleanField(default=False)
-    lift = models.BooleanField(default=False)
+    furnitured = models.CharField(max_length=10)
+    lift = models.CharField(max_length=10)
     view = models.CharField(max_length=50)
+    description = models.CharField(max_length=5000)
 
 
 
