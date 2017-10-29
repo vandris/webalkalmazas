@@ -37,21 +37,22 @@
 					<td height = 100 colspan = 2 align = "left" background = "">
 						<!--<p><img src="logo.png"></p>--->
 						{% load staticfiles %}
-							<img src="{% static "logo.png" %}" alt="My image"/>
+							<img src={% static "webalkalmazas/logo.png" %}>
+							<!--<img src="static/webalkalmazas/logo.png" alt="My image"/>--->
 					</td>
 					<td colspan = 3 align = "right" valign = "center">
-						<p><a class = "one" href=""><font size= 4><u>Bejelentkezés/Regisztráció</u></font></a>&nbsp&nbsp&nbsp</p>
+						<p><a class = "one" href="/polls/login/"><font size= 4><u>Bejelentkezés/Regisztráció</u></font></a>&nbsp&nbsp&nbsp</p>
 					</td>
 				</tr>
 				<tr>
 					<td colspan = 5><hr color = "8b795e"></td>
 				</tr>
 				<tr height = 50 align = "center">
-					<td width = "20%"><a class = "one" href="http://index.hu"><font size= 4>Főoldal</font></a></td>
-					<td width = "20%"><a class = "one" href=""><font size= 4>Hirdetések</font></a></td>
-					<td width = "20%"><!--<a href="">Link</a>--></td>
-					<td width = "20%"><a class = "one" href=""><font size= 4>Link2</font></a></td>
-					<td width = "20%"><a class = "one" href=""><font size= 4>Link3</font></a></td>
+					<td width = "20%"><a class = "one" href="/polls/"><font size= 4>Főoldal</font></a></td>
+					<td width = "20%"><a class = "one" href="/polls/search/"><font size= 4>Ingatlan keresés</font></a></td>
+					<td width = "20%"><a class = "one" href="/polls/addadd/"><font size= 4>Hirdetés feladás</font></a></td>
+					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link2</font></a>--></td>
+					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link3</font></a>--></td>
 				</tr>
 				<tr height = 1000>
 					<td colspan = 5 valign = "top">

@@ -82,6 +82,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'search/static/webalkalmazas/')]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'webalkalmazas/', 'search/static/webalkalmazas/')]
+
+
 TEMPLATES = [
 {
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
