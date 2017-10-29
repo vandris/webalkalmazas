@@ -15,8 +15,17 @@ def index(request):
 	context = {
 		'list': list
 	}
-	return render(request, 'polls/index3.html', context)
+	return render(request, 'polls/index1.html', context)
 
 def adds(request, id):
 	response = "You are searchingfor the %s"
 	return HttpResponse(response % id)
+
+def search(request):
+	return render(request, 'polls/search.html', {})
+
+def login(request):
+	return render(request, 'polls/login.html', {})
+
+def addadd(request):
+	return render(request, 'polls/addadd.html', {})

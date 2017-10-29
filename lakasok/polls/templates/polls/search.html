@@ -1,8 +1,8 @@
-<html>
+Ôªø<html>
 <head>
 	<style>
 		body{color: #8b795e;}
-	   .vÌzszintesjobb{ text-shadow: 1px 0px 0px black;}
+	   .v√≠zszintesjobb{ text-shadow: 1px 0px 0px black;}
 		a.one:link {color:#8b795e;text-decoration:none;}
 		a.one:visited {color:#8b795e;text-decoration:none;}
 		a.one:hover {color:#000000;text-decoration:none;}
@@ -24,7 +24,7 @@
 		}
 	</style>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Lak·shirdetı port·l</title>
+	<title>Lak√°shirdet≈ë port√°l</title>
 	<link rel="stylesheet" href="css/style.css">
 	<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -35,22 +35,22 @@
 			<table width = 1200 align = "center" border = 0>
 				<tr>
 					<td height = 100 colspan = 2 align = "left" background = "">
-						<p><img src="logo.png"></p>
+						<!--<p><img src="logo.png"></p>--->
+						{% load staticfiles %}
+							<img src="{% static "logo.png" %}" alt="My image"/>
 					</td>
 					<td colspan = 3 align = "right" valign = "center">
-						<p>
-						<a class = "one" href=""><font size= 4>BejelentkezÈs/Regisztr·ciÛ</a>&nbsp&nbsp&nbsp</font>
-						</p>
+						<p><a class = "one" href=""><font size= 4><u>Bejelentkez√©s/Regisztr√°ci√≥</u></font></a>&nbsp&nbsp&nbsp</p>
 					</td>
 				</tr>
 				<tr>
 					<td colspan = 5><hr color = "8b795e"></td>
 				</tr>
 				<tr height = 50 align = "center">
-					<td width = "20%"><a class = "one" href="http://index.hu"><font size= 4>Fıoldal</a></font></td>
-					<td width = "20%"><a class = "one" href=""><font size= 4><u>HirdetÈsek</u></a></font></td>
+					<td width = "20%"><a class = "one" href="http://index.hu"><font size= 4>F≈ëoldal</font></a></td>
+					<td width = "20%"><a class = "one" href=""><font size= 4>Hirdet√©sek</font></a></td>
 					<td width = "20%"><!--<a href="">Link</a>--></td>
-					<td width = "20%"><a class = "one" href=""><font size= 4>Link2</a></font></td>
+					<td width = "20%"><a class = "one" href=""><font size= 4>Link2</font></a></td>
 					<td width = "20%"><a class = "one" href=""><font size= 4>Link3</font></a></td>
 				</tr>
 				<tr height = 1000>
@@ -60,70 +60,70 @@
 							<table width = 1000 align = "center" border = 0><tr>
 								<td>Megye:<br> 
 									<input type="checkbox" name="megye" value="Budapest">Budapest<br>
-									<input type="checkbox" name="megye" value="Bacs-Kiskun">B·cs-Kiskun megye<br>
+									<input type="checkbox" name="megye" value="Bacs-Kiskun">B√°cs-Kiskun megye<br>
 									<input type="checkbox" name="megye" value="Baranya">Baranya megye<br>
-									<input type="checkbox" name="megye" value="Bekes">BÈkÈs megye<br>
-									<input type="checkbox" name="megye" value="Borsod-Abauj">Borsod-Aba˙j-ZemplÈn megye<br>
-									<input type="checkbox" name="megye" value="Csongrad">Csongr·d megye<br>
-									<input type="checkbox" name="megye" value="Fejer">FejÈr megye<br>
-									<input type="checkbox" name="megye" value="Gyor-Moson-Sopron">Gyır-Moson-Sopron megye<br>
-									<input type="checkbox" name="megye" value="Hajdu-Bihar">Hajd˙-Bihar megye<br>
+									<input type="checkbox" name="megye" value="Bekes">B√©k√©s megye<br>
+									<input type="checkbox" name="megye" value="Borsod-Abauj">Borsod-Aba√∫j-Zempl√©n megye<br>
+									<input type="checkbox" name="megye" value="Csongrad">Csongr√°d megye<br>
+									<input type="checkbox" name="megye" value="Fejer">Fej√©r megye<br>
+									<input type="checkbox" name="megye" value="Gyor-Moson-Sopron">Gy≈ër-Moson-Sopron megye<br>
+									<input type="checkbox" name="megye" value="Hajdu-Bihar">Hajd√∫-Bihar megye<br>
 									<input type="checkbox" name="megye" value="Heves">Heves megye<br>
-									<input type="checkbox" name="megye" value="Jazs-Nagykun-Szolnok">J·sz-Nagykun-Szolnok megye<br>
-									<input type="checkbox" name="megye" value="Komarom-Esztergom">Kom·rom-Esztergom megye<br>
-									<input type="checkbox" name="megye" value="Nograd">NÛgr·d megye<br>
+									<input type="checkbox" name="megye" value="Jazs-Nagykun-Szolnok">J√°sz-Nagykun-Szolnok megye<br>
+									<input type="checkbox" name="megye" value="Komarom-Esztergom">Kom√°rom-Esztergom megye<br>
+									<input type="checkbox" name="megye" value="Nograd">N√≥gr√°d megye<br>
 									<input type="checkbox" name="megye" value="Past">Pest megye<br>
 									<input type="checkbox" name="megye" value="Somogy">Somogy megye<br>
-									<input type="checkbox" name="megye" value="Szabolcs-Szatmar-Bereg">Szabolcs-Szatm·r-Bereg megye<br>
+									<input type="checkbox" name="megye" value="Szabolcs-Szatmar-Bereg">Szabolcs-Szatm√°r-Bereg megye<br>
 									<input type="checkbox" name="megye" value="Tolna">Tolna megye<br>
 									<input type="checkbox" name="megye" value="Vas">Vas megye<br>
-									<input type="checkbox" name="megye" value="Veszprem">VeszprÈm megye<br>
+									<input type="checkbox" name="megye" value="Veszprem">Veszpr√©m megye<br>
 									<input type="checkbox" name="megye" value="Zala">Zala megye
 								</td>
 								<td valign="top">
-									<p>H·z tÌpusa:<br>
-										<input type="checkbox" name="haz" value="csaladi">Csal·di
-										<input type="checkbox" name="haz" value="tarsas">T·rsas
+									<p>H√°z t√≠pusa:<br>
+										<input type="checkbox" name="haz" value="csaladi">Csal√°di
+										<input type="checkbox" name="haz" value="tarsas">T√°rsas
 										<input type="checkbox" name="haz" value="panel">Panel
 										<input type="checkbox" name="haz" value="iker">Iker
-										<input type="checkbox" name="haz" value="egyÈb">EgyÈb
+										<input type="checkbox" name="haz" value="egy√©b">Egy√©b
 									</p>
-									<p>Falak tÌpusa:<br>
+									<p>Falak t√≠pusa:<br>
 										<input type="checkbox" name="fal" value="panel">Panel
-										<input type="checkbox" name="fal" value="tegla">TÈgla
-										<input type="checkbox" name="fal" value="valyog">V·lyog
+										<input type="checkbox" name="fal" value="tegla">T√©gla
+										<input type="checkbox" name="fal" value="valyog">V√°lyog
 										<input type="checkbox" name="fal" value="ytong">Ytong
 										<input type="checkbox" name="fal" value="fa">Fa
-										<input type="checkbox" name="fal" value="ronk">Rˆnk
-										<input type="checkbox" name="fal" value="ko">Kı
-										<input type="checkbox" name="fal" value="egyeb">EgyÈb
+										<input type="checkbox" name="fal" value="ronk">R√∂nk
+										<input type="checkbox" name="fal" value="ko">K≈ë
+										<input type="checkbox" name="fal" value="egyeb">Egy√©b
 									</p>
 									<p>Lift:<br>
 										<input type="radio" name="lift" value="van">Van
 										<input type="radio" name="lift" value="nincs">Nincs
 									</p>
-									<p>Ter¸let:<br><input type="number" name="szobaszam" min="0" max="1000000" value=""></p>
-									<p>¡r:<br><input type="number" name="szobaszam" min="0" max="10000" value=""></p>
-									<p>…pÌtÈs Ève: (legkor·bban)<br><input type="number" name="szobaszam" min="1000" max="2017" value=""></p>
-									<p>RendezÈs szempontja:<br>
+									<p>Ter√ºlet:<br><input type="number" name="szobaszam" min="0" max="1000000" value=""></p>
+									<p>√År:<br><input type="number" name="szobaszam" min="0" max="10000" value=""></p>
+									<p>√âp√≠t√©s √©ve: (legkor√°bban)<br><input type="number" name="szobaszam" min="1000" max="2017" value=""></p>
+									<p>Rendez√©s szempontja:<br>
 										<select name = "rendez">
 											<option value="ures"></option>
 											<option value="megye">Megye</option>
-											<option value="haz">H·z tÌpusa</option>
-											<option value="fal">Falak tÌpusa</option>
-											<option value="terulet">Ter¸let</option>
-											<option value="ar">¡r</option>
-											<option value="ev">…pÌtÈs Ève</option>
+											<option value="haz">H√°z t√≠pusa</option>
+											<option value="fal">Falak t√≠pusa</option>
+											<option value="terulet">Ter√ºlet</option>
+											<option value="ar">√År</option>
+											<option value="ev">√âp√≠t√©s √©ve</option>
 										</select>
 									</p>
-									<input type="submit" = "cursive" class="button button1" value="Keres">
+									<input type="submit" class="button button1" value="Keres">
 								</td>
 							</tr></table>
 						</form>
 						<p><br><table width = 1000 align = center border = 0>
 							<tr height = 60>
 								<td colspan = 3>
-									<font size = 6>Budapest, Budapest Istv·n utca 5.</font>
+									<font size = 6>Budapest, Budapest Istv√°n utca 5.</font>
 								</td>
 								<td>
 									<font size = 6>25,5 M Ft</font>
@@ -131,7 +131,7 @@
 							</tr>
 							<tr>
 								<td width = 15%>
-									<b>Alapter¸let:</b>
+									<b>Alapter√ºlet:</b>
 								</td>
 								<td width = 35%>
 									78 m<sup>2</sup>
@@ -145,13 +145,13 @@
 							</tr>
 							<tr>
 								<td>
-									<b>H·z tÌpusa:</b>
+									<b>H√°z t√≠pusa:</b>
 								</td>
 								<td>
-									csal·di
+									csal√°di
 								</td>
 								<td>
-									<b>B˙torozott:</b>
+									<b>B√∫torozott:</b>
 								</td>
 								<td>
 									Nem
@@ -159,27 +159,27 @@
 							</tr>
 							<tr>
 								<td>
-									<b>Falak tÌpusa</b>
+									<b>Falak t√≠pusa</b>
 								</td>
 								<td>
-									tÈgla
+									t√©gla
 								</td>
 								<td>
-									<b>Parkol·s:</b>
+									<b>Parkol√°s:</b>
 								</td>
 								<td>
-									gar·zs
+									gar√°zs
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<b>Szob·k sz·ma:</b>
+									<b>Szob√°k sz√°ma:</b>
 								</td>
 								<td>
 									5
 								</td>
 								<td>
-									<b>F˚tÈs:</b>
+									<b>F≈±t√©s:</b>
 								</td>
 								<td>
 									cirko
@@ -187,21 +187,21 @@
 							</tr>
 							<tr>
 								<td>
-									<b>Ingatlan ·llapota:</b>
+									<b>Ingatlan √°llapota:</b>
 								</td>
 								<td>
-									fel˙jÌtott
+									fel√∫j√≠tott
 								</td>
 								<td>
-									<b>Kil·t·s</b>
+									<b>Kil√°t√°s</b>
 								</td>
 								<td>
-									utc·ra
+									utc√°ra
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<b>…pÌtÈs Ève:</b>
+									<b>√âp√≠t√©s √©ve:</b>
 								</td>
 								<td>
 									2013
@@ -210,7 +210,7 @@
 									<b>Tulajdonos:</b>
 								</td>
 								<td>
-									Tam·s
+									Tam√°s
 								</td>
 							</tr>
 						</table></p>
