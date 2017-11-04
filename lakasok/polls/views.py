@@ -19,7 +19,6 @@ def addHouse(request):
 	getHeating = request.GET.get('heating')
 	getState = request.GET.get('state')
 	getRooms = request.GET.get('rooms')
-	getParking = request.GET.get('parking')
 	getYear = request.GET.get('year')
 	getFurnitured = request.GET.get('furnitured')
 	getLift = request.GET.get('lift')
