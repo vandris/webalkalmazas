@@ -11,7 +11,7 @@ from django.db import connection
 
 def addHouse(request):
 	getCountry = request.GET.get('country')
-	getOwner = request.GET.get('owner')
+	#getOwner = request.GET.get('owner')
 	getsquaremeter = request.GET.get('squaremeter')
 	getPrice = request.GET.get('price')
 	getType = request.GET.get('type')
@@ -25,8 +25,11 @@ def addHouse(request):
 	getLift = request.GET.get('lift')
 	getParking = request.GET.get('parking')
 	getView = request.GET.get('view')
-	getAddress = request.GET.get('address')
-	adds = Adds(owner = getOwner, squaremeter = getsquaremeter, price = getPrice, type = getType, wall = getWall, heating = getHeating, state = getState, rooms = getRooms, parking = getParking, year = getYear, furnitured = getFurnitured, lift = getLift, view = getView, address = getAddress, country = getCountry)
+	getCity = request.GET.get('city')
+	getStreet = request.GET.get('street')
+	getNumber = request.GET.get('number')
+	getAddress = getCity +" " + getStreet + " " + getNumber + "."
+	adds = Adds(owner = "Nori", squaremeter = getsquaremeter, price = getPrice, type = getType, wall = getWall, heating = getHeating, state = getState, rooms = getRooms, parking = getParking, year = getYear, furnitured = getFurnitured, lift = getLift, view = getView, address = getAddress, country = getCountry)
 	adds.save()
 	return render(request, 'polls/felvesz.html', {})
 
