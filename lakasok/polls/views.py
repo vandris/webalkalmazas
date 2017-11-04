@@ -7,6 +7,11 @@ from django.shortcuts import get_object_or_404
 from django.template import loader
 from django.shortcuts import render
 from .models import Adds
+from django.db import connection
+
+def addHouse():
+	adds = Adds(owner = "lom", squaremeter = 14, price = 500, type = "tegla", wall = "tegla", heating = "meleg", state = "jo", rooms = 2, parking = "van", year = 1995, furnitured = "ja", lift = "ja", view = "van", address = "lalala", country = "newYork")
+	adds.save()
 
 def index(request):
 	list = Adds.objects.order_by('owner')[:5]
@@ -31,7 +36,11 @@ def search(request):
 	return render(request, 'polls/search.html', context)
 
 def login(request):
+	adds = Adds(owner = "lom", squaremeter = 14, price = 500, type = "tegla", wall = "tegla", heating = "meleg", state = "jo", rooms = 2, parking = "van", year = 1995, furnitured = "ja", lift = "ja", view = "van", address = "lalala", country = "newYork")
+	adds.save()
 	return render(request, 'polls/login.html', {})
 
 def addadd(request):
+	adds = Adds(owner = "looom", squaremeter = 14, price = 500, type = "tegla", wall = "tegla", heating = "meleg", state = "jo", rooms = 2, parking = "van", year = 1995, furnitured = "ja", lift = "ja", view = "van", address = "lalala", country = "newYork")
+	adds.save()
 	return render(request, 'polls/addadd.html', {})
