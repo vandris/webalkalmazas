@@ -56,11 +56,11 @@
 				</tr>
 				<tr height = 1000>
 					<td colspan = 5 valign = "top">
-						<form action="/felvesz.html">
+						<form action="/polls/felvesz/">
 						<p><h4>Új hirdetés helvétele</h4></p>
 						<p>Címe:<br>
 						Megye: 
-							<select name = "megye">
+							<select name = "country">
 								<option value="ures"></option>
 								<option value="Budapest">Budapest</option>
 								<option value="Bacs-Kiskun">Bács-Kiskun megye</option>
@@ -83,11 +83,11 @@
 								<option value="Veszprem">Veszprém megye</option>
 								<option value="Zala">Zala megye</option>
 							</select>
-						Település: <input type="text" name="varos" value="">
-						Utca: <input type="text" name="utca" value="">
-						Házszám: <input type="text" name="hszam" value=""></p>
+						Település: <input type="text" name="city" value="">
+						Utca: <input type="text" name="street" value="">
+						Házszám: <input type="text" name="number" value=""></p>
 						<p>Ház típusa:<br>
-							<select name = "haz">
+							<select name = "type">
 								<option value="ures"></option>
 								<option value="panel">Családi</option>
 								<option value="tegla">Társas</option>
@@ -96,7 +96,7 @@
 								<option value="egyeb">Egyéb</option>
 							</select></p>
 						<p>Falak típusa:<br>
-							<select name = "fal">
+							<select name = "wall">
 								<option value="ures"></option>
 								<option value="panel">Panel</option>
 								<option value="tegla">Tégla</option>
@@ -108,7 +108,7 @@
 								<option value="egyeb">Egyéb</option>
 							</select></p>
 						<p>Fűtés típusa:<br>
-							<select name = "futes">
+							<select name = "heating">
 								<option value="ures"></option>
 								<option value="panel">Központi</option>
 								<option value="tegla">Kályha</option>
@@ -117,9 +117,9 @@
 								<option value="egyeb">Egyéb</option>
 							</select></p>
 						<p>Szobák száma:<br>
-							<input type="number" name="szobaszam" min="0" max="50" value=""></p>
+							<input type="number" name="rooms" min="0" max="50" value=""></p>
 						<p>Parkolás:<br>
-							<select name = "parkolas">
+							<select name = "parking">
 								<option value="ures"></option>
 								<option value="panel">Garázs</option>
 								<option value="tegla">Kertben</option>
@@ -130,12 +130,12 @@
 								<input type="radio" name="lift" value="van">Van<br>
 								<input type="radio" name="lift" value="nincs">Nincs</p>
 						<p>Építés éve:<br>
-							<input type="number" name="ev" min="1000" max="2017" value=""></p>
+							<input type="number" name="year" min="1000" max="2017" value=""></p>
 						<p>Bútorozott?<br>
-							<input type="radio" name="butor" value="igen">Igen<br>
-							<input type="radio" name="butor" value="nem">Nem</p>
+							<input type="radio" name="furnitured" value="igen">Igen<br>
+							<input type="radio" name="furnitured" value="nem">Nem</p>
 						<p>Tájolás:<br>
-							<select name = "kilatas">
+							<select name = "view">
 								<option value="ures"></option>
 								<option value="panel">Utcára</option>
 								<option value="tegla">Kertben</option>
@@ -143,11 +143,11 @@
 								<option value="egyeb">Egyéb</option>
 							</select></p>
 						<p>Négyzetméter:<br>
-							<input type="number" name="nm" min="0" max="1000000" value=""></p>
+							<input type="number" name="squaremeter" min="0" max="1000000" value=""></p>
 						<p>Ár:<br>
-							<input type="number" name="ar" min="0" max="10000" value=""> millió Ft</p>
+							<input type="number" name="price" min="0" max="10000" value=""> millió Ft</p>
 						<p>Ingatlan állapota:<br>
-							<select name = "allapot">
+							<select name = "state">
 								<option value="ures"></option>
 								<option value="panel">Felújításra vár</option>
 								<option value="tegla">Felújított</option>

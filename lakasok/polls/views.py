@@ -9,9 +9,26 @@ from django.shortcuts import render
 from .models import Adds
 from django.db import connection
 
-def addHouse():
-	adds = Adds(owner = "lom", squaremeter = 14, price = 500, type = "tegla", wall = "tegla", heating = "meleg", state = "jo", rooms = 2, parking = "van", year = 1995, furnitured = "ja", lift = "ja", view = "van", address = "lalala", country = "newYork")
+def addHouse(request):
+	getCountry = request.GET.get('country')
+	getOwner = request.GET.get('owner')
+	getsquaremeter = request.GET.get('squaremeter')
+	getPrice = request.GET.get('price')
+	getType = request.GET.get('type')
+	getWall = request.GET.get('wall')
+	getHeating = request.GET.get('heating')
+	getState = request.GET.get('state')
+	getRooms = request.GET.get('rooms')
+	getParking = request.GET.get('parking')
+	getYear = request.GET.get('year')
+	getFurnitured = request.GET.get('furnitured')
+	getLift = request.GET.get('lift')
+	getParking = request.GET.get('parking')
+	getView = request.GET.get('view')
+	getAddress = request.GET.get('address')
+	adds = Adds(owner = getOwner, squaremeter = getsquaremeter, price = getPrice, type = getType, wall = getWall, heating = getHeating, state = getState, rooms = getRooms, parking = getParking, year = getYear, furnitured = getFurnitured, lift = getLift, view = getView, address = getAddress, country = getCountry)
 	adds.save()
+	return render(request, 'polls/felvesz.html', {})
 
 def index(request):
 	list = Adds.objects.order_by('owner')[:5]
@@ -36,11 +53,7 @@ def search(request):
 	return render(request, 'polls/search.html', context)
 
 def login(request):
-	adds = Adds(owner = "lom", squaremeter = 14, price = 500, type = "tegla", wall = "tegla", heating = "meleg", state = "jo", rooms = 2, parking = "van", year = 1995, furnitured = "ja", lift = "ja", view = "van", address = "lalala", country = "newYork")
-	adds.save()
 	return render(request, 'polls/login.html', {})
 
 def addadd(request):
-	adds = Adds(owner = "looom", squaremeter = 14, price = 500, type = "tegla", wall = "tegla", heating = "meleg", state = "jo", rooms = 2, parking = "van", year = 1995, furnitured = "ja", lift = "ja", view = "van", address = "lalala", country = "newYork")
-	adds.save()
 	return render(request, 'polls/addadd.html', {})
