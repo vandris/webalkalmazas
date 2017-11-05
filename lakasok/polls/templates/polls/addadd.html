@@ -50,110 +50,119 @@
 				<tr height = 50 align = "center">
 					<td width = "20%"><a class = "one" href="/polls/"><font size= 4>Főoldal</font></a></td>
 					<td width = "20%"><a class = "one" href="/polls/search/"><font size= 4>Ingatlan keresés</font></a></td>
-					<td width = "20%"><a class = "one" href="/polls/addadd/"><font size= 4>Hirdetés feladás</font></a></td>
+					<td width = "20%"><a class = "one" href="/polls/addadd/"><font size= 4><b>Hirdetés feladás</b></font></a></td>
 					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link2</font></a>--></td>
 					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link3</font></a>--></td>
 				</tr>
 				<tr height = 1000>
 					<td colspan = 5 valign = "top">
 						<form onsubmit="return verify()" action="/polls/created/">
-						<p><h4>Új hirdetés helvétele</h4></p>
-						<p>Címe:<br>
-						Megye: 
+						<p><br><br>
+						&nbsp Megye:
 							<select name="country" id="idCountry">
 								<option value=""></option>
 								<option value="Budapest">Budapest</option>
-								<option value="Bacs-Kiskun">Bács-Kiskun megye</option>
+								<option value="Bács-Kiskun">Bács-Kiskun megye</option>
 								<option value="Baranya">Baranya megye</option>
-								<option value="Bekes">Békés megye</option>
+								<option value="Békés">Békés megye</option>
 								<option value="Borsod-Abauj">Borsod-Abaúj-Zemplén megye</option>
-								<option value="Csongrad">Csongrád megye</option>
-								<option value="Fejer">Fejér megye</option>
-								<option value="Gyor-Moson-Sopron">Győr-Moson-Sopron megye</option>
+								<option value="Csongrád">Csongrád megye</option>
+								<option value="Fejér">Fejér megye</option>
+								<option value="Győr-Moson-Sopron">Győr-Moson-Sopron megye</option>
 								<option value="Hajdu-Bihar">Hajdú-Bihar megye</option>
 								<option value="Heves">Heves megye</option>
-								<option value="Jazs-Nagykun-Szolnok">Jász-Nagykun-Szolnok megye</option>
-								<option value="Komarom-Esztergom">Komárom-Esztergom megye</option>
-								<option value="Nograd">Nógrád megye</option>
+								<option value="Jász-Nagykun-Szolnok">Jász-Nagykun-Szolnok megye</option>
+								<option value="Komárom-Esztergom">Komárom-Esztergom megye</option>
+								<option value="Nográd">Nógrád megye</option>
 								<option value="Past">Pest megye</option>
 								<option value="Somogy">Somogy megye</option>
-								<option value="Szabolcs-Szatmar-Bereg">Szabolcs-Szatmár-Bereg megye</option>
+								<option value="Szabolcs-Szatmár-Bereg">Szabolcs-Szatmár-Bereg megye</option>
 								<option value="Tolna">Tolna megye</option>
 								<option value="Vas">Vas megye</option>
-								<option value="Veszprem">Veszprém megye</option>
+								<option value="Veszprém">Veszprém megye</option>
 								<option value="Zala">Zala megye</option>
 							</select>
 						Település: <input type="text" name="city" value="" id="idCity">
 						Utca: <input type="text" name="street" value="" id="idStreet">
 						Házszám: <input type="text" name="number" value="" id="idNumber"></p>
-						<p>Ház típusa:<br>
-							<select name = "type" id="idType">
-								<option value=""></option>
-								<option value="panel">Családi</option>
-								<option value="tegla">Társas</option>
-								<option value="valyog">Panel</option>
-								<option value="itong">Iker</option>
-								<option value="egyeb">Egyéb</option>
-							</select></p>
-						<p>Falak típusa:<br>
-							<select name = "wall" id="idWall">
-								<option value=""></option>
-								<option value="panel">Panel</option>
-								<option value="tegla">Tégla</option>
-								<option value="valyog">Vályog</option>
-								<option value="ytong">ytong</option>
-								<option value="fa">Fa</option>
-								<option value="ronk">Rönk</option>
-								<option value="ko">Kő</option>
-								<option value="egyeb">Egyéb</option>
-							</select></p>
-						<p>Fűtés típusa:<br>
-							<select name = "heating" id="idHeating">
-								<option value=""></option>
-								<option value="panel">Központi</option>
-								<option value="tegla">Kályha</option>
-								<option value="valyog">Cirko</option>
-								<option value="itong">Konvektor</option>
-								<option value="egyeb">Egyéb</option>
-							</select></p>
-						<p>Szobák száma:<br>
-							<input type="number" name="rooms" min="0" max="50" value="" id="idRooms"></p>
-						<p>Parkolás:<br>
-							<select name = "parking" id="idParking">
-								<option value=""></option>
-								<option value="panel">Garázs</option>
-								<option value="tegla">Kertben</option>
-								<option value="valyog">Utcán</option>
-								<option value="egyeb">Egyéb</option>
-							</select></p>
-						<p>Lift:<br>
-								<input type="radio" name="lift" value="van">Van<br>
-								<input type="radio" name="lift" value="nincs">Nincs</p>
-						<p>Építés éve:<br>
-							<input type="number" name="year" min="1000" max="2017" value="" id="idYear"></p>
-						<p>Bútorozott?<br>
-							<input type="radio" name="furnitured" value="igen">Igen<br>
-							<input type="radio" name="furnitured" value="nem">Nem</p>
-						<p>Kilátás:<br>
-							<select name = "view" id="idView">
-								<option value=""></option>
-								<option value="panel">Utcára</option>
-								<option value="tegla">Kertben</option>
-								<option value="valyog">Udvarra</option>
-								<option value="egyeb">Egyéb</option>
-							</select></p>
-						<p>Négyzetméter:<br>
-							<input type="number" name="squaremeter" min="0" max="1000000" value="" id="idSquaremeter"></p>
-						<p>Ár:<br>
-							<input type="number" name="price" min="0" max="10000" value="" id="idPrice"> millió Ft</p>
-						<p>Ingatlan állapota:<br>
-							<select name = "state" id="idState">
-								<option value=""></option>
-								<option value="panel">Felújításra vár</option>
-								<option value="tegla">Felújított</option>
-								<option value="egyeb">Egyéb</option>
-							</select></p>
-						<p><input type="submit" class="button button1" value="Hirdetés felvétele"></p>
+						<table width = 700 align = "center">
+							<tr valign = "top"><td>
+								<p>Négyzetméter:<br>
+									<input type="number" name="squaremeter" min="0" max="1000000" value="" id="idSquaremeter"> m<sup>2</sup></p>
+								<p>Ár:<br>
+									<input type="number" name="price" min="0" max="10000" value="" id="idPrice"> millió Ft</p>
+								<p>Ingatlan típusa:<br>
+									<select name = "type" id="idType">
+										<option value=""></option>
+										<option value="családi">Családi</option>
+										<option value="társas">Társas</option>
+										<option value="panel">Panel</option>
+										<option value="iker">Iker</option>
+										<option value="egyéb">Egyéb</option>
+									</select></p>
+
+								<p>Szobák száma:<br>
+									<input type="number" name="rooms" min="0" max="50" value="" id="idRooms"></p>
+								<p>Ingatlan állapota:<br>
+									<select name = "state" id="idState">
+										<option value=""></option>
+										<option value="felújításra vár">Felújításra vár</option>
+										<option value="felújított">Felújított</option>
+										<option value="egyéb">Egyéb</option>
+									</select></p>
+								<p>Építés éve:<br>
+									<input type="number" name="year" min="1000" max="2017" value="" id="idYear"></p>
+							</td>
+							<td>
+								<p>Falak típusa:<br>
+									<select name = "wall" id="idWall">
+										<option value=""></option>
+										<option value="panel">Panel</option>
+										<option value="tégla">Tégla</option>
+										<option value="vályog">Vályog</option>
+										<option value="ytong">ytong</option>
+										<option value="fa">Fa</option>
+										<option value="rönk">Rönk</option>
+										<option value="kő">Kő</option>
+										<option value="egyéb">Egyéb</option>
+									</select></p>
+								<p>Fűtés típusa:<br>
+									<select name = "heating" id="idHeating">
+										<option value=""></option>
+										<option value="központi">Központi</option>
+										<option value="kályha">Kályha</option>
+										<option value="cirko">Cirko</option>
+										<option value="konvektor">Konvektor</option>
+										<option value="egyéb">Egyéb</option>
+									</select></p>
+								<p>Bútorozott?<br>
+									<input required type="radio" name="furnitured" value="igen">Igen<br>
+									<input type="radio" name="furnitured" value="nem">Nem</p>
+								<p>Kilátás:<br>
+									<select name = "view" id="idView">
+										<option value=""></option>
+										<option value="utcára">Utcára</option>
+										<option value="kertbe">Kertbe</option>
+										<option value="udvarra">Udvarra</option>
+										<option value="egyéb">Egyéb</option>
+									</select></p>
+								<p>Parkolás:<br>
+									<select name = "parking" id="idParking">
+										<option value=""></option>
+										<option value="garázs">Garázs</option>
+										<option value="kertben">Kertben</option>
+										<option value="utcán">Utcán</option>
+										<option value="egyéb">Egyéb</option>
+									</select></p>
+								<p>Lift:<br>
+										<input required type="radio" name="lift" value="van">Van<br>
+										<input type="radio" name="lift" value="nincs">Nincs</p>
+								</td></tr>
+								<tr><td colspan=2>
+									<textarea style="resize:none" cols="110" rows="4" name="description" resize="false"></textarea>
+								</td></tr>
+						</table>
+						<p align = "center"><input type="submit" class="button button1" value="Hirdetés felvétele"></p>
 						</form>
 					</td>
 				</tr>
@@ -168,19 +177,14 @@
 	</section>
 	<script>
 		function verify() {
-			if(!document.getElementById('idCity').value.trim().length)
-				{
-					alert("Kérlek add meg melyik városban található az ingatlan!");
-					return false;
-				}
 			if(!document.getElementById('idCountry').value.trim().length)
 				{
 					alert("Kérlek add meg melyik megyében található az ingatlan!");
 					return false;
 				}
-			if(!document.getElementById('idNumber').value.trim().length)
+			if(!document.getElementById('idCity').value.trim().length)
 				{
-					alert("Kérlek add meg hány szoba található az ingatlanban!");
+					alert("Kérlek add meg melyik városban található az ingatlan!");
 					return false;
 				}
 			if(!document.getElementById('idStreet').value.trim().length)
@@ -188,29 +192,24 @@
 					alert("Kérlek add meg melyik utcában található az ingatlan!");
 					return false;
 				}
+			if(!document.getElementById('idNumber').value.trim().length)
+				{
+					alert("Kérlek add meg mi a házszáma az ingatlannak!");
+					return false;
+				}
 			if(!document.getElementById('idType').value.trim().length)
 				{
 					alert("Kérlek add meg milyen ingatlant szeretnél hirdetni!");
 					return false;
 				}
-			if(!document.getElementById('idCity').value.trim().length)
+			if(!document.getElementById('idWall').value.trim().length)
 				{
-					alert("Kérlek add meg melyik Megyében található az ingatlan!");
-					return false;
-				}
-			if(!document.getElementById('idWalls').value.trim().length)
-				{
-					alert("Kérlek add meg milyen fűtés van az ingatlanban!");
+					alert("Kérlek add meg milyen falak van az ingatlanban!");
 					return false;
 				}
 			if(!document.getElementById('idParking').value.trim().length)
 				{
 					alert("Kérlek add meg milyen parkolási lehetőségek vannak!");
-					return false;
-				}
-			if(!document.getElementById('idLift').value.trim().length)
-				{
-					alert("Kérlek add meg van e lift az ingatlanban!");
 					return false;
 				}
 			if(!document.getElementById('idView').value.trim().length)
@@ -238,7 +237,12 @@
 					alert("Kérlek add meg melyik évben épült az ingatlan!");
 					return false;
 				}
-			else return true;
+			if(!document.getElementById('idRooms').value.trim().length)
+				{
+					alert("Kérlek add meg hány szoba található az ingatlanban!");
+					return false;
+				}
+
 		}
 	</script>
 </body>
