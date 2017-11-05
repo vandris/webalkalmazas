@@ -30,7 +30,11 @@ def addHouse(request):
 	getAddress = getCity +" " + getStreet + " " + getNumber + "."
 	adds = Adds(owner = "Nori", squaremeter = getsquaremeter, price = getPrice, type = getType, wall = getWall, heating = getHeating, state = getState, rooms = getRooms, parking = getParking, year = getYear, furnitured = getFurnitured, lift = getLift, view = getView, address = getAddress, country = getCountry)
 	adds.save()
-	return render(request, 'polls/felvesz.html', {})
+	return render(request, 'polls/created.html', {})
+
+def searchHouse(request):
+	getCountry = request.GET.get('country')
+	return render(request, 'polls/searchresults.html', getCountry)
 
 def index(request):
 	list = Adds.objects.order_by('owner')[:5]
