@@ -9,6 +9,7 @@ urlpatterns = [
 	url(r'^addadd/', views.addadd, name='addadd'),
 	url(r'^created/$', views.addHouse, name='addHouse'),
 	url(r'^searchresults/$', views.searchHouse, name='searchHouse'),
+	url(r'^connect/$', views.contact, name='contact'),
 
 	#url(r'^$', views.index, name='index'),
 	url(r'^(?P<id>[0-9]+)/$', views.adds, name='adds'),

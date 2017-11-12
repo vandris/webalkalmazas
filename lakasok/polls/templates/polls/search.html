@@ -225,6 +225,14 @@
 										{{adds.owner}}
 									</td>
 								</tr>
+								<tr>
+									<form action="/polls/connect/">
+											<td colspan = 4 height = 100 align = "right" valign = "top">
+												<input type = "hidden" name = "id" value = "{{adds.id}}">
+												<input type="submit" class="button button1" value="Kapcsolat felvétel">
+											</td>
+									</form>
+								</tr>
 							{% endfor %}
 						</table></p>
 						{% else %}
@@ -235,7 +243,25 @@
 				</tr>
 				<tr>
 					<td colspan = 5>
-						<p>Kontaktok</p>
+						<hr color="8b795e">
+					</td>
+				</tr>
+				<tr>
+					<td colspan = 3 align="left" valign="bottom">
+						<p><h4>&nbsp &nbsp &nbsp&nbsp &nbsp &nbspTovábbi hasznos oldalak</h4></p>
+						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<a class="one" href="https://www.bankracio.hu/hitelkalkulator/lakashitel/1-lakasvasarlasi-hitel-hasznalt-lakasra">Lakáshitel-kalkulátor</a>
+						<br>
+						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<a class="one" href="https://hirdetesfeladas.ingatlan.com/szolgaltatasaink-maganhirdetoknek/energiatanusitvany">Energiatanusítvány</a>
+						<br>
+						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<a class="one" href="https://alaprajz.ingatlan.com/editor">Alaprajztervező</a>
+						<br>
+					</td>
+					<td colspan = 2 align="left">
+						<p><h4>Kapcsolat</h4></p>
+						Email: segitunk@talaldmegujotthonod.hu<br>
+						Ügyfélszolgálat: +36 (1) 111 1111<br>
+						Sajtókapcsolat: sajto@talaldmegujotthonod.hu
+						<br>
 					</td>
 				</tr>
 			</table>

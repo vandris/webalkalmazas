@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404
 from django.template import loader
 from django.shortcuts import render
 from .models import Adds
+from .models import Users
 from django.db import connection
 
 def addHouse(request):
@@ -29,7 +30,7 @@ def addHouse(request):
 	getNumber = request.GET.get('number')
 	getDescriptions = request.GET.get('description')
 	getAddress = getCity +" " + getStreet + " " + getNumber + "."
-	adds = Adds(owner = "Nori", squaremeter = getsquaremeter, price = getPrice, type = getType, wall = getWall, heating = getHeating, state = getState, rooms = getRooms, parking = getParking, year = getYear, furnitured = getFurnitured, lift = getLift, view = getView, address = getAddress, country = getCountry, description = getDescriptions)
+	adds = Adds(owner = request.user, squaremeter = getsquaremeter, price = getPrice, type = getType, wall = getWall, heating = getHeating, state = getState, rooms = getRooms, parking = getParking, year = getYear, furnitured = getFurnitured, lift = getLift, view = getView, address = getAddress, country = getCountry, description = getDescriptions)
 	adds.save()
 	return render(request, 'polls/created.html', {})
 
@@ -67,10 +68,23 @@ def search(request):
 	return render(request, 'polls/search.html', context)
 
 def login(request):
-	return render(request, 'polls/login.html', {})
+	if request.user.is_authenticated:
+		return render(request, 'polls/warning_a.html', {})
+	else:
+		return render(request, 'polls/login.html', {})
+
 
 def addadd(request):
 	if request.user.is_authenticated:
 		return render(request, 'polls/addadd.html', {})
 	else:
-		return render(request, 'polls/index1.html', {})
+		return render(request, 'polls/warning_na.html', {})
+
+def contact(request):
+	add_id = request.GET.getlist('id')
+	name = Adds.objects.filter(id = add_id[0])
+	list = Users.objects.filter(fullname = name[0].owner)
+	context = {
+		'list': list
+	}
+	return render(request, 'polls/connect.html', context)

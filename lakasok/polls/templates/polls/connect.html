@@ -10,6 +10,18 @@
 	<meta charset="charset=iso-8859-2">
 	<style type="text/css">
 		body {font-family: cursive;}
+		.button1 {
+			background-color: #fce6c9; 
+			color: #8b795e; 
+			border: 2px solid #D2B48C;
+			transition-duration: 0.4s;
+			padding: 5px 30px;
+			font-size: 15px;
+		}
+		.button1:hover {
+			background-color: #D2B48C;
+			color: white;
+		}
 	</style>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Lakáshirdető portál</title>
@@ -41,8 +53,8 @@
 					<td colspan = 5><hr color = "8b795e"></td>
 				</tr>
 				<tr height = 50 align = "center">
-					<td width = "20%"><a class = "one" href="/polls/"><font size= 4><b>Főoldal</b></font></a></td>
-					<td width = "20%"><a class = "one" href="/polls/search/"><font size= 4>Ingatlan keresés</font></a></td>
+					<td width = "20%"><a class = "one" href="/polls/"><font size= 4>Főoldal</font></a></td>
+					<td width = "20%"><a class = "one" href="/polls/search/"><font size= 4><b>Ingatlan keresés</b></font></a></td>
 					<td width = "20%">
 							{% if user.is_authenticated %}
 							<a class = "one" href="/polls/addadd/"><font size= 4>Hirdetés feladás</font></a>
@@ -53,16 +65,35 @@
 				</tr>
 				<tr height = 600>
 					<td colspan = 5 valign = "top">
-						<p>
-							<table width=800 align="center"><tr><td>
+						<p><br></p>
+						{% if list %}
+							{% for users in list %}
+								<form action="/polls/sendmessage/">
+									<table width = 1000 align = "center" border = 0>
+										<tr>
+											<td>
+												{{users.fullname}}<br>
+												e-mail: {{users.email}}
+											</td>
+										</tr>
+										
+										<tr>
+											<td>
+												<p>Vagy ír neki üzenetet itt:</p>
+												<form action="/polls/sendmessage/">
+													<textarea required = "required" style="resize:none" cols="110" rows="4" name="message" resize="false"></textarea>
+													<input type = "hidden" name = "id" value = "{{users.fullname}}">
+													<input type="submit" class="button button1" value="Üzenet küldése">
+												</form>
+											</td>
+										</tr>
+									</table></p>
+								</form>
+							{% endfor %}
+						{% else %}
 							<br><br><br>
-							<h3>Történetünk</h3>
-							A közel 20 éves talaldmegujotthonod.hu az egyik legújabb magyar honlap. Büszkék vagyunk rá,
-							hogy a cég a kezdetek óta magyar tulajdonban van, az alapító ma is a cég stratégiai vezetője.
-							Elkötelezettek vagyunk a piaci igények minél alaposabb megismerése és a folyamatos fejlesztések iránt,
-							ezért már több mint 2-en dolgozunk azon, hogy világszínvonalú szolgáltatást nyújtsunk ügyfeleinknek.
-							</td></tr></table>
-						</p>
+							<p align="center">A kívánt tartalom nem jeleníthető meg!</p>
+						{% endif %}
 
 					</td>
 				</tr>
