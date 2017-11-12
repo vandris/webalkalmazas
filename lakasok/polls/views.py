@@ -70,4 +70,7 @@ def login(request):
 	return render(request, 'polls/login.html', {})
 
 def addadd(request):
-	return render(request, 'polls/addadd.html', {})
+	if request.user.is_authenticated:
+		return render(request, 'polls/addadd.html', {})
+	else:
+		return render(request, 'polls/index1.html', {})

@@ -29,7 +29,12 @@
 							<!--<img src="static/webalkalmazas/logo.png" alt="My image"/>--->
 					</td>
 					<td colspan = 3 align = "right" valign = "center">
-						<p><a class = "one" href="/polls/login/"><font size= 3><u>Bejelentkezés/Regisztráció</u></font></a>&nbsp&nbsp&nbsp</p>
+						{% if user.is_authenticated %}
+     						<font size= 4>Felhasználó: {{ user.get_username }}&nbsp &nbsp &nbsp</font><br>
+							<a class = "one" href="{% url 'logout'%}?next={{request.path}}">Logout</a>&nbsp &nbsp &nbsp
+  						{% else %}
+							<a class = "one" href="{% url 'login'%}?next={{request.path}}">Login</a>&nbsp &nbsp &nbsp
+   						{% endif %}
 					</td>
 				</tr>
 				<tr>
@@ -38,14 +43,23 @@
 				<tr height = 50 align = "center">
 					<td width = "20%"><a class = "one" href="/polls/"><font size= 4><b>Főoldal</b></font></a></td>
 					<td width = "20%"><a class = "one" href="/polls/search/"><font size= 4>Ingatlan keresés</font></a></td>
-					<td width = "20%"><a class = "one" href="/polls/addadd/"><font size= 4>Hirdetés feladás</font></a></td>
+					<td width = "20%">
+							{% if user.is_authenticated %}
+							<a class = "one" href="/polls/addadd/"><font size= 4>Hirdetés feladás</font></a>
+							{% endif %}
+					</td>
 					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link2</font></a>--></td>
 					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link3</font></a>--></td>
 				</tr>
 				<tr height = 1000>
 					<td colspan = 5 valign = "top">
 						<p>
-							Ide jön majd az oldal tartalma.
+							<br>
+							<h3>Történetünk</h3>
+							A közel 20 éves talaldmegujotthonod.hu az egyik legújabb magyar honlap. Büszkék vagyunk rá,
+							hogy a cég a kezdetek óta magyar tulajdonban van, az alapító ma is a cég stratégiai vezetője.
+							Elkötelezettek vagyunk a piaci igények minél alaposabb megismerése és a folyamatos fejlesztések iránt,
+							ezért már több mint 2-en dolgozunk azon, hogy világszínvonalú szolgáltatást nyújtsunk ügyfeleinknek.
 						</p>
 						<p>
 							Falak típusa:<br>
