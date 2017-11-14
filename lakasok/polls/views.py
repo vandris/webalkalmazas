@@ -6,8 +6,10 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.template import loader
 from django.shortcuts import render, redirect
+from django.db.models import Q
 from .models import Adds
 from .models import Users
+from .models import Messages
 from django.db import connection
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
@@ -92,6 +94,24 @@ def contact(request):
 		'list': list
 	}
 	return render(request, 'polls/connect.html', context)
+
+def messages(request):
+	list = Messages.objects.filter(Q(sender = request.user.username) | Q(receiver = request.user.username))
+	context = {
+		'list': list
+	}
+	return render(request, 'polls/messages.html', context)
+
+def send_messages(request):
+	if request.GET.get("sender") == request.user.username:
+		name = request.GET.get("receiver")
+	else:
+		name = request.GET.get("sender")
+	list = Messages.objects.filter(sender = "kata")
+	context = {
+		'list': list
+	}
+	return render(request, 'polls/send_messages.html', context)
 
 def signup(request):
     if request.method == 'POST':
