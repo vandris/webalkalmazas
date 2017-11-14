@@ -31,7 +31,8 @@
 					<td colspan = 3 align = "right" valign = "center">
 						{% if user.is_authenticated %}
      						<font size= 4>Felhasználó: {{ user.get_username }}&nbsp &nbsp &nbsp</font><br>
-							<a class = "one" href="{% url 'logout'%}?next={{request.path}}">Logout</a>&nbsp &nbsp &nbsp
+							<font size= 2><a class = "one" href="/polls/change_password/">Jelszó változtatás</a>&nbsp &nbsp&nbsp &nbsp &nbsp</font><br>
+							<a class = "one" href="{% url 'logout'%}?next={{request.path}}">Logout</a>&nbsp&nbsp &nbsp &nbsp
   						{% else %}
 							<a class = "one" href="{% url 'login'%}?next={{request.path}}">Login</a>&nbsp &nbsp &nbsp
    						{% endif %}

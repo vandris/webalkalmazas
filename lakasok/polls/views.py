@@ -11,6 +11,10 @@ from .models import Users
 from django.db import connection
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+
 
 def addHouse(request):
 	getCountry = request.GET.get('country')
@@ -102,3 +106,19 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'polls/signup.html', {'form': form})
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'A jelszavadat sikeresen megváltoztattuk!')
+            return redirect('change_password')
+        else:
+            messages.error(request, 'Hiba lépett fel.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'polls/change_password.html', {
+        'form': form
+    })

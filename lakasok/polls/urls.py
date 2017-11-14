@@ -1,12 +1,15 @@
 from django.conf.urls import url
 from . import views
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
+from django.contrib.auth import login
 
 urlpatterns = [
 	url(r'^$', views.index, name='home'),
 	url(r'^search/', views.search, name='search'),
 	url(r'^login/', views.login, name='login'),
 	url(r'^signup/',views.signup, name='signup'),
+	url(r'^password/', views.change_password, name='change_password'),
 	url(r'^addadd/', views.addadd, name='addadd'),
 	url(r'^created/$', views.addHouse, name='addHouse'),
 	url(r'^searchresults/$', views.searchHouse, name='searchHouse'),
