@@ -5,10 +5,12 @@ from django.http import HttpResponse
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.template import loader
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Adds
 from .models import Users
 from django.db import connection
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 
 def addHouse(request):
 	getCountry = request.GET.get('country')
@@ -60,8 +62,6 @@ def adds(request, id):
 
 def search(request):
 	list = Adds.objects.order_by('owner')[:30]
-	'''output = ', '.join([a.owner for a in list])
-	return HttpResponse(output)'''
 	context = {
 		'list': list
 	}
@@ -88,3 +88,17 @@ def contact(request):
 		'list': list
 	}
 	return render(request, 'polls/connect.html', context)
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            #login(request, user)
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+    return render(request, 'polls/signup.html', {'form': form})

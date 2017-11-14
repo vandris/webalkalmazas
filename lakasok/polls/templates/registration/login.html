@@ -62,26 +62,40 @@
 						<table align="center" width=600 border=0>
 							<tr valign="top">
 								<td>
+                                    <p><h4>Bejelentkezés</h4></p>
 									<p>
 										{% block content %}
 
                                             {% if form.errors %}
-                                            <p>Your username and password didn't match. Please try again.</p>
+                                            <p>A felhasználónév vagy jelszó helytelen. Kérlek próbáld meg újra.</p>
+                                            {% endif %}
+
+                                            {% if next %}
+                                                {% if user.is_authenticated %}
+                                                <p>Nincs jogosultságod a megtekinteni kívánt tartalomhoz</p>
+                                                {% endif %}
                                             {% endif %}
 
                                             <form method="post" action="{% url 'login' %}">
                                             {% csrf_token %}
 
-
-                                              <td><p><h4>Bejelentkezés</h4></p>
-                                                Felhasználónév:<br>
-                                              {{ form.username }}<br>
-                                                Jelszó:<br>
-                                              {{ form.password }}<br><br>
-                                            <input type="submit" class="button button1" value="Bejelentkezés" />
-                                            <input type="hidden" name="next" value="{{ next }}" />
-                                            </td>
+                                            <div>
+                                              Felhasználónév:<br>
+                                              {{ form.username }}
+                                            </div>
+                                            <div>
+                                              Jelszó:<br>
+                                              {{ form.password }}
+                                            </div>
+                                            <br>
+                                            <div>
+                                              <input type="submit" class="button button1" value="Bejelentkezés" />
+                                              <input type="hidden" name="next" value="{{ next }}" />
+                                            </div>
                                             </form>
+
+                                            {# Assumes you setup the password_reset view in your URLconf #}
+                                            <p><a href="{% url 'password_reset' %}" class="one">Elfelejtetted a jelszavad?</a></p>
 
                                             {% endblock %}
 									</p>
@@ -90,7 +104,7 @@
                                     <p><h4>Regisztráció</h4></p>
 									<p>
 										<form action="/index.html">
-											Név:<br><input type="text" name="FullName" value=""><br>
+											Felhasználónév:<br><input type="text" name="FullName" value=""><br>
 											E-mail cím:<br><input type="email" name="EmailAddress" value=""><br>
 											Jelszó:<br><input type="password" name="Passwd" value=""><br>
 											Jelszó újra:<br><input type="password" name="Passwdre" value=""><br>
