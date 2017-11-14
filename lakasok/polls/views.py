@@ -113,6 +113,15 @@ def send_messages(request):
 	}
 	return render(request, 'polls/send_messages.html', context)
 
+def send_newmessages(request):
+	getReceiver = request.GET.get('receiver')
+	getSender = request.user.username
+	getMessage = request.GET.get('message')
+	mess = Messages(sender = getSender, receiver = getReceiver, message = getMessage, valid = 1, unread = 1)
+	mess.save()
+	#return render(request, 'polls/sended.html', {})
+	return HttpResponse('Üzenet elküldve')
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

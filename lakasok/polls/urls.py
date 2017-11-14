@@ -16,6 +16,7 @@ urlpatterns = [
 	url(r'^connect/$', views.contact, name='contact'),
 	url(r'^messages/', views.messages, name='messages'),
 	url(r'^send_messages/$', views.send_messages, name='send_messages'),
+	url(r'^send_newmessages/$', views.send_newmessages, name='send_newmessages'),
 
 	#url(r'^$', views.index, name='index'),
 	url(r'^(?P<id>[0-9]+)/$', views.adds, name='adds'),
