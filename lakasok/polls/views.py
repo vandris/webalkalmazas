@@ -16,6 +16,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+from .forms import AddForm
+from django.contrib.auth.models import User
+
 
 
 def addHouse(request):
@@ -38,7 +43,9 @@ def addHouse(request):
 	getNumber = request.GET.get('number')
 	getDescriptions = request.GET.get('description')
 	getAddress = getCity +" " + getStreet + " " + getNumber + "."
-	adds = Adds(owner = request.user, squaremeter = getsquaremeter, price = getPrice, type = getType, wall = getWall, heating = getHeating, state = getState, rooms = getRooms, parking = getParking, year = getYear, furnitured = getFurnitured, lift = getLift, view = getView, address = getAddress, country = getCountry, description = getDescriptions)
+	MyAddForm = AddForm(request.GET, request.FILES)
+	adds = Adds(owner = request.user, squaremeter = getsquaremeter, price = getPrice, type = getType, wall = getWall, heating = getHeating, state = getState, rooms = getRooms, parking = getParking, year = getYear, furnitured = getFurnitured, lift = getLift, view = getView, address = getAddress, country = getCountry, description = getDescriptions, picture=AddForm["picture"])
+	#print("........picture.........",adds.picture)
 	adds.save()
 	return render(request, 'polls/created.html', {})
 
@@ -67,7 +74,7 @@ def adds(request, id):
 	return HttpResponse(response % id)
 
 def search(request):
-	list = Adds.objects.order_by('owner')[:30]
+	list = Adds.objects.order_by('owner')[:100]
 	context = {
 		'list': list
 	}
@@ -89,7 +96,7 @@ def addadd(request):
 def contact(request):
 	add_id = request.GET.getlist('id')
 	name = Adds.objects.filter(id = add_id[0])
-	list = Users.objects.filter(fullname = name[0].owner)
+	list = User.objects.filter(username = name[0].owner)
 	context = {
 		'list': list
 	}
@@ -107,7 +114,7 @@ def send_messages(request):
 		name = request.GET.get("receiver")
 	else:
 		name = request.GET.get("sender")
-	list = Messages.objects.filter(sender = "kata")
+	list = Messages.objects.filter(sender = name)[:1]
 	context = {
 		'list': list
 	}
@@ -119,7 +126,7 @@ def send_newmessages(request):
 	getMessage = request.GET.get('message')
 	mess = Messages(sender = getSender, receiver = getReceiver, message = getMessage, valid = 1, unread = 1)
 	mess.save()
-	return HttpResponse('Üzenet elküldve')
+	return render(request, 'polls/sent.html', {})
 
 def signup(request):
     if request.method == 'POST':
@@ -146,6 +153,6 @@ def change_password(request):
             messages.error(request, 'Hiba lépett fel.')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'polls/change_password.html', {
+    return render(request, 'polls/change_password_2.html', {
         'form': form
     })

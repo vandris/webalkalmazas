@@ -62,7 +62,6 @@ ROOT_URLCONF = 'lakasok.urls'
 
 WSGI_APPLICATION = 'lakasok.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
@@ -92,7 +91,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/home'
+
+#MEDIA_ROOT = [os.path.join(BASE_DIR, 'search/pictures/')]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
+MEDIA_URL = '/search/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'search/static/webalkalmazas/')]
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'webalkalmazas/', 'search/static/webalkalmazas/')]
