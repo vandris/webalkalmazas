@@ -119,7 +119,6 @@ def send_newmessages(request):
 	getMessage = request.GET.get('message')
 	mess = Messages(sender = getSender, receiver = getReceiver, message = getMessage, valid = 1, unread = 1)
 	mess.save()
-	#return render(request, 'polls/sended.html', {})
 	return HttpResponse('Üzenet elküldve')
 
 def signup(request):
@@ -130,7 +129,6 @@ def signup(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            #login(request, user)
             return redirect('home')
     else:
         form = UserCreationForm()
