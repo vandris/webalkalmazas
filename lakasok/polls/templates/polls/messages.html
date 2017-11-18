@@ -1,0 +1,200 @@
+﻿<html>
+<head>
+	<style>
+		body{color: #8b795e;}
+	   .vízszintesjobb{ text-shadow: 1px 0px 0px black;}
+		a.one:link {color:#8b795e;text-decoration:none;}
+		a.one:visited {color:#8b795e;text-decoration:none;}
+		a.one:hover {color:#000000;text-decoration:none;}
+	</style>
+	<meta charset="charset=iso-8859-2">
+	<style type="text/css">
+		body {font-family: cursive;}
+		.button1 {
+			background-color: #fce6c9; 
+			color: #8b795e; 
+			border: 2px solid #D2B48C;
+			transition-duration: 0.4s;
+			padding: 5px 30px;
+			font-size: 15px;
+		}
+		.button1:hover {
+			background-color: #D2B48C;
+			color: white;
+		}
+	</style>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Lakáshirdető portál</title>
+	<!--<link rel="stylesheet" href="css/style.css">-->
+	<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body bgcolor="#d2b48c" link = "" alink="" vlink = "">
+	<section class="container">
+		<table border = 3 bgcolor = "fce6c9" align = "center">
+			<tr><td>
+			<table width = 1200 align = "center" border = 0>
+				<tr>
+					<td height = 100 colspan = 2 align = "left" background = "">
+						<!--<p><img src="logo.png"></p>--->
+						{% load staticfiles %}
+							<img src={% static "webalkalmazas/logo.png" %}>
+							<!--<img src="static/webalkalmazas/logo.png" alt="My image"/>--->
+					</td>
+					<td colspan = 3 align = "right" valign = "center">
+						{% if user.is_authenticated %}
+     						<font size= 4>Felhasználó: {{ user.get_username }}&nbsp &nbsp &nbsp</font><br>
+							<font size= 2><a class = "one" href="/polls/change_password/">Jelszó változtatás</a>&nbsp &nbsp&nbsp &nbsp &nbsp</font><br>
+							<a class = "one" href="{% url 'logout'%}?next={{request.path}}">Logout</a>&nbsp&nbsp &nbsp &nbsp
+  						{% else %}
+							<a class = "one" href="{% url 'login'%}?next={{request.path}}">Login</a>&nbsp &nbsp &nbsp
+   						{% endif %}
+
+					</td>
+				</tr>
+				<tr>
+					<td colspan = 5><hr color = "8b795e"></td>
+				</tr>
+				<tr height = 50 align = "center">
+					<td width = "20%"><a class = "one" href="/polls/"><font size= 4>Főoldal</font></a></td>
+					<td width = "20%"><a class = "one" href="/polls/search/"><font size= 4>Ingatlan keresés</font></a></td>
+					<td width = "20%"><a class = "one" href="/polls/addadd/"><font size= 4><b>Hirdetés feladás</b></font></a></td>
+					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link2</font></a>--></td>
+					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link3</font></a>--></td>
+				</tr>
+					<tr height = 600>
+						<td colspan = 5 valign = "top">
+														<table width = 1000 border = 1>
+								<tr height = 60 valign = "top">
+									<td width = 200>
+										Partner azonosító
+									</td>
+									<td width = 600>
+										Utolsó üzenet
+									</td>
+									<td width = 180>
+
+									</td>
+								</tr>
+									{% if list %}
+										{% for messages in list %}
+											<tr>
+												<td>
+													<a href = "">{{messages.sender}} -> {{messages.receiver}}</a>
+												</td>
+												<td>
+													{{messages.message}}
+												</td>
+												<td valign = "middle">
+													<form action="/polls/send_messages/">
+														<input type = "hidden" name = "sender" value = "{{messages.sender}}">
+														<input type = "hidden" name = "receiver" value = "{{messages.receiver}}">
+														<input type="submit" class="button button1" value="Üzenet küldése">
+													</form>
+												</td>
+											</tr>
+										{% endfor %}
+									{% else %}
+										<p>Nincs egyetlen üzeneted sem!</p>
+									{% endif %}
+							</table>
+						</td>
+					</tr>
+				<tr>
+					<td colspan = 5>
+						<hr color="8b795e">
+					</td>
+				</tr>
+				<tr>
+					<td colspan = 3 align="left" valign="bottom">
+						<p><h4>&nbsp &nbsp &nbsp&nbsp &nbsp &nbspTovábbi hasznos oldalak</h4></p>
+						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<a class="one" href="https://www.bankracio.hu/hitelkalkulator/lakashitel/1-lakasvasarlasi-hitel-hasznalt-lakasra">Lakáshitel-kalkulátor</a>
+						<br>
+						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<a class="one" href="https://hirdetesfeladas.ingatlan.com/szolgaltatasaink-maganhirdetoknek/energiatanusitvany">Energiatanusítvány</a>
+						<br>
+						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<a class="one" href="https://alaprajz.ingatlan.com/editor">Alaprajztervező</a>
+						<br>
+					</td>
+					<td colspan = 2 align="left">
+						<p><h4>Kapcsolat</h4></p>
+						Email: segitunk@talaldmegujotthonod.hu<br>
+						Ügyfélszolgálat: +36 (1) 111 1111<br>
+						Sajtókapcsolat: sajto@talaldmegujotthonod.hu
+						<br>
+					</td>
+				</tr>
+			</table>
+			</td></tr>
+		</table>
+	</section>
+	<script>
+		function verify() {
+			if(!document.getElementById('idCountry').value.trim().length)
+				{
+					alert("Kérlek add meg melyik megyében található az ingatlan!");
+					return false;
+				}
+			if(!document.getElementById('idCity').value.trim().length)
+				{
+					alert("Kérlek add meg melyik városban található az ingatlan!");
+					return false;
+				}
+			if(!document.getElementById('idStreet').value.trim().length)
+				{
+					alert("Kérlek add meg melyik utcában található az ingatlan!");
+					return false;
+				}
+			if(!document.getElementById('idNumber').value.trim().length)
+				{
+					alert("Kérlek add meg mi a házszáma az ingatlannak!");
+					return false;
+				}
+			if(!document.getElementById('idType').value.trim().length)
+				{
+					alert("Kérlek add meg milyen ingatlant szeretnél hirdetni!");
+					return false;
+				}
+			if(!document.getElementById('idWall').value.trim().length)
+				{
+					alert("Kérlek add meg milyen falak van az ingatlanban!");
+					return false;
+				}
+			if(!document.getElementById('idParking').value.trim().length)
+				{
+					alert("Kérlek add meg milyen parkolási lehetőségek vannak!");
+					return false;
+				}
+			if(!document.getElementById('idView').value.trim().length)
+				{
+					alert("Kérlek add meg milyen a kilátás az ingatlanból!");
+					return false;
+				}
+			if(!document.getElementById('idState').value.trim().length)
+				{
+					alert("Kérlek add meg milyen az ingatlan állapota!");
+					return false;
+				}
+			if(!document.getElementById('idPrice').value.trim().length)
+				{
+					alert("Kérlek add meg mennyibe kerül az ingatlan!");
+					return false;
+				}
+			if(!document.getElementById('idSquaremeter').value.trim().length)
+				{
+					alert("Kérlek add meg milyen nagy az ingatlan!");
+					return false;
+				}
+			if(!document.getElementById('idYear').value.trim().length)
+				{
+					alert("Kérlek add meg melyik évben épült az ingatlan!");
+					return false;
+				}
+			if(!document.getElementById('idRooms').value.trim().length)
+				{
+					alert("Kérlek add meg hány szoba található az ingatlanban!");
+					return false;
+				}
+
+		}
+	</script>
+</body>
+</html>
