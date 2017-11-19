@@ -19,6 +19,12 @@ urlpatterns = [
 	url(r'^messages/', views.messages, name='messages'),
 	url(r'^send_messages/$', views.send_messages, name='send_messages'),
 	url(r'^send_newmessages/$', views.send_newmessages, name='send_newmessages'),
+	url(r'^search_owner/$', views.search_owner, name='search_owner'),
+	url(r'^delete_add/$', views.delete_add, name='delete_add'),
+	url(r'^users/', views.users, name='users'),
+	url(r'^delete_user/$', views.delete_user, name='delete_user'),
+	url(r'^modify/$', views.modify, name='modify'),
+	url(r'^modify_add/$', views.modify_add, name='modify_add'),
 
 	#url(r'^$', views.index, name='index'),
 	url(r'^(?P<id>[0-9]+)/$', views.adds, name='adds'),

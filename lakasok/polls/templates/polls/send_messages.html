@@ -63,7 +63,11 @@
 							<a class = "one" href="/polls/messages/"><font size= 4><b>Üzeneteim</b></font></a>
 							{% endif %}
 					</td>
-					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link3</font></a>--></td>
+					<td width = "20%">
+							{% if user.is_authenticated %}
+							<a class = "one" href="/polls/search_owner/"><font size= 4>Hirdetéseim</font></a>
+							{% endif %}
+					</td>
 				</tr>
 					<tr height = 600>
 						<td colspan = 5 valign = "top">

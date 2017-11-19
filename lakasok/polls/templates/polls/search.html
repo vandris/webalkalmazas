@@ -66,69 +66,73 @@
 							<a class = "one" href="/polls/messages/"><font size= 4>Üzeneteim</font></a>
 							{% endif %}
 					</td>
-					<td width = "20%"><!--<a class = "one" href=""><font size= 4>Link3</font></a>--></td>
+					<td width = "20%">
+							{% if user.is_authenticated %}
+							<a class = "one" href="/polls/search_owner/"><font size= 4>Hirdetéseim</font></a>
+							{% endif %}
+					</td>
 				</tr>
 				<tr height = 1000>
 					<td colspan = 5 valign = "top">
 						<p><br></p>
 						<form action="/polls/searchresults/">
 							<table width = 1000 align = "center" border = 0><tr>
-								<td>Megye:<br> 
-									<input type="checkbox" name="megye" value="Budapest">Budapest<br>
-									<input type="checkbox" name="megye" value="Bacs-Kiskun">Bács-Kiskun megye<br>
-									<input type="checkbox" name="megye" value="Baranya">Baranya megye<br>
-									<input type="checkbox" name="megye" value="Bekes">Békés megye<br>
-									<input type="checkbox" name="megye" value="Borsod-Abauj">Borsod-Abaúj-Zemplén megye<br>
-									<input type="checkbox" name="megye" value="Csongrad">Csongrád megye<br>
-									<input type="checkbox" name="megye" value="Fejer">Fejér megye<br>
-									<input type="checkbox" name="megye" value="Gyor-Moson-Sopron">Győr-Moson-Sopron megye<br>
-									<input type="checkbox" name="megye" value="Hajdu-Bihar">Hajdú-Bihar megye<br>
-									<input type="checkbox" name="megye" value="Heves">Heves megye<br>
-									<input type="checkbox" name="megye" value="Jazs-Nagykun-Szolnok">Jász-Nagykun-Szolnok megye<br>
-									<input type="checkbox" name="megye" value="Komarom-Esztergom">Komárom-Esztergom megye<br>
-									<input type="checkbox" name="megye" value="Nograd">Nógrád megye<br>
-									<input type="checkbox" name="megye" value="Past">Pest megye<br>
-									<input type="checkbox" name="megye" value="Somogy">Somogy megye<br>
-									<input type="checkbox" name="megye" value="Szabolcs-Szatmar-Bereg">Szabolcs-Szatmár-Bereg megye<br>
-									<input type="checkbox" name="megye" value="Tolna">Tolna megye<br>
-									<input type="checkbox" name="megye" value="Vas">Vas megye<br>
-									<input type="checkbox" name="megye" value="Veszprem">Veszprém megye<br>
-									<input type="checkbox" name="megye" value="Zala">Zala megye
+								<td>Megye:<br>
+									<input type="checkbox" name="country" value="Budapest">Budapest<br>
+									<input type="checkbox" name="country" value="Bács-Kiskun">Bács-Kiskun megye<br>
+									<input type="checkbox" name="country" value="Baranya">Baranya megye<br>
+									<input type="checkbox" name="country" value="Békés">Békés megye<br>
+									<input type="checkbox" name="country" value="Borsod-Abauj">Borsod-Abaúj-Zemplén megye<br>
+									<input type="checkbox" name="country" value="Csongrád">Csongrád megye<br>
+									<input type="checkbox" name="country" value="Fejér">Fejér megye<br>
+									<input type="checkbox" name="country" value="Győr-Moson-Sopron">Győr-Moson-Sopron megye<br>
+									<input type="checkbox" name="country" value="Hajdu-Bihar">Hajdú-Bihar megye<br>
+									<input type="checkbox" name="country" value="Heves">Heves megye<br>
+									<input type="checkbox" name="country" value="Jász-Nagykun-Szolnok">Jász-Nagykun-Szolnok megye<br>
+									<input type="checkbox" name="country" value="Komárom-Esztergom">Komárom-Esztergom megye<br>
+									<input type="checkbox" name="country" value="Nográd">Nógrád megye<br>
+									<input type="checkbox" name="country" value="Past">Pest megye<br>
+									<input type="checkbox" name="country" value="Somogy">Somogy megye<br>
+									<input type="checkbox" name="country" value="Szabolcs-Szatmár-Bereg">Szabolcs-Szatmár-Bereg megye<br>
+									<input type="checkbox" name="country" value="Tolna">Tolna megye<br>
+									<input type="checkbox" name="country" value="Vas">Vas megye<br>
+									<input type="checkbox" name="country" value="Veszprém">Veszprém megye<br>
+									<input type="checkbox" name="country" value="Zala">Zala megye
 								</td>
 								<td valign="top">
 									<p>Ház típusa:<br>
-										<input type="checkbox" name="haz" value="csaladi">Családi
-										<input type="checkbox" name="haz" value="tarsas">Társas
-										<input type="checkbox" name="haz" value="panel">Panel
-										<input type="checkbox" name="haz" value="iker">Iker
-										<input type="checkbox" name="haz" value="egyéb">Egyéb
+										<input type="checkbox" name="type" value="családi">Családi
+										<input type="checkbox" name="type" value="társas">Társas
+										<input type="checkbox" name="type" value="panel">Panel
+										<input type="checkbox" name="type" value="iker">Iker
+										<input type="checkbox" name="type" value="egyéb">Egyéb
 									</p>
 									<p>Falak típusa:<br>
-										<input type="checkbox" name="fal" value="panel">Panel
-										<input type="checkbox" name="fal" value="tegla">Tégla
-										<input type="checkbox" name="fal" value="valyog">Vályog
-										<input type="checkbox" name="fal" value="ytong">Ytong
-										<input type="checkbox" name="fal" value="fa">Fa
-										<input type="checkbox" name="fal" value="ronk">Rönk
-										<input type="checkbox" name="fal" value="ko">Kő
-										<input type="checkbox" name="fal" value="egyeb">Egyéb
+										<input type="checkbox" name="wall" value="panel">Panel
+										<input type="checkbox" name="wall" value="tégla">Tégla
+										<input type="checkbox" name="wall" value="vályog">Vályog
+										<input type="checkbox" name="wall" value="ytong">Ytong
+										<input type="checkbox" name="wall" value="fa">Fa
+										<input type="checkbox" name="wall" value="rönk">Rönk
+										<input type="checkbox" name="wall" value="kő">Kő
+										<input type="checkbox" name="wall" value="egyéb">Egyéb
 									</p>
 									<p>Lift:<br>
 										<input type="radio" name="lift" value="van">Van
 										<input type="radio" name="lift" value="nincs">Nincs
 									</p>
-									<p>Terület:<br><input type="number" name="szobaszam" min="0" max="1000000" value=""></p>
-									<p>Ár:<br><input type="number" name="szobaszam" min="0" max="10000" value=""></p>
-									<p>Építés éve: (legkorábban)<br><input type="number" name="szobaszam" min="1000" max="2017" value=""></p>
+									<p>Terület:<br><input type="number" name="squaremeter" min="0" max="1000000" value=""></p>
+									<p>Ár:<br><input type="number" name="price" min="0" max="10000" value=""></p>
+									<p>Építés éve: (legkorábban)<br><input type="number" name="year" min="1000" max="2017" value=""></p>
 									<p>Rendezés szempontja:<br>
-										<select name = "rendez">
+										<select name = "order">
 											<option value="ures"></option>
-											<option value="megye">Megye</option>
-											<option value="haz">Ház típusa</option>
-											<option value="fal">Falak típusa</option>
-											<option value="terulet">Terület</option>
-											<option value="ar">Ár</option>
-											<option value="ev">Építés éve</option>
+											<option value="country">Megye</option>
+											<option value="type">Ház típusa</option>
+											<option value="wall">Falak típusa</option>
+											<option value="squaremeter">Terület</option>
+											<option value="price">Ár</option>
+											<option value="year">Építés éve</option>
 										</select>
 									</p>
 									<input type="submit" class="button button1" value="Keres">
@@ -144,6 +148,9 @@
 									</td>
 									<td>
 										<font size = 6>{{adds.price}} M Ft</font>
+									</td>
+									<td rowspan = 7>
+										<img src="{{adds.picture.url}}" height="200" width="250" border="1"/>
 									</td>
 								</tr>
 								<tr>
@@ -228,16 +235,22 @@
 									</td>
 									<td>
 										{{adds.owner}}
-										<img src="{{adds.picture.url}}" height="200" width="250" border="1"/>
+
 									</td>
 								</tr>
 								<tr>
-									<form action="/polls/connect/">
-											<td colspan = 4 height = 100 align = "right" valign = "top">
-												<input type = "hidden" name = "id" value = "{{adds.id}}">
-												<input type="submit" class="button button1" value="Kapcsolat felvétel">
-											</td>
-									</form>
+									<td colspan = 5 height = 100 align = "right" valign = "top">
+										<form action="/polls/connect/">
+											<input type = "hidden" name = "id" value = "{{adds.id}}">
+											<input type="submit" class="button button1" value="Kapcsolat felvétel">
+										</form>
+										{% if user.is_superuser %}
+										<form action="/polls/delete_add/">
+											<input type = "hidden" name = "id" value = "{{adds.id}}">
+											<input type="submit" class="button button1" value="Hirdetés törlése">
+										</form>
+										{% endif %}
+									</td>
 								</tr>
 							{% endfor %}
 						</table></p>
