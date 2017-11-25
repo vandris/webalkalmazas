@@ -27,7 +27,7 @@ class Adds(models.Model):
     lift = models.CharField(max_length=10)
     view = models.CharField(max_length=50)
     description = models.CharField(max_length=5000)
-    picture = models.ImageField(upload_to='search/pictures/', default = 'pictures/None/no-image.jpg')
+    picture = models.ImageField(upload_to='pictures/', default='pictures/no-image.jpg')
 
 
 

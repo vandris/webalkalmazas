@@ -18,10 +18,10 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-from .forms import AddForm
+from .forms import AddForm, AddsForm
 from django.contrib.auth.models import User
 
-
+"""""
 def addHouse(request):
     getCountry = request.GET.get('country')
     # getOwner = request.GET.get('owner')
@@ -50,7 +50,36 @@ def addHouse(request):
     # print("........picture.........",adds.picture)
     adds.save()
     return render(request, 'polls/created.html', {})
-
+"""
+def addHouse(request):
+    getCountry = request.POST.get('country')
+    # getOwner = request.GET.get('owner')
+    getsquaremeter = request.POST.get('squaremeter')
+    getPrice = request.POST.get('price')
+    getType = request.POST.get('type')
+    getWall = request.POST.get('wall')
+    getHeating = request.POST.get('heating')
+    getState = request.POST.get('state')
+    getRooms = request.POST.get('rooms')
+    getYear = request.POST.get('year')
+    getFurnitured = request.POST.get('furnitured')
+    getLift = request.POST.get('lift')
+    getParking = request.POST.get('parking')
+    getView = request.POST.get('view')
+    getCity = request.POST.get('city')
+    getStreet = request.POST.get('street')
+    getNumber = request.POST.get('number')
+    getDescriptions = request.POST.get('description')
+    getAddress = getCity + " " + getStreet + " " + getNumber + "."
+    MyAddForm = AddForm(request.POST, request.FILES)
+    adds = Adds(owner=request.user, squaremeter=getsquaremeter, price=getPrice, type=getType, wall=getWall,
+                heating=getHeating, state=getState, rooms=getRooms, parking=getParking, year=getYear,
+                furnitured=getFurnitured, lift=getLift, view=getView, address=getAddress, country=getCountry,
+                description=getDescriptions,
+                picture=request.FILES["picture"])
+    # print("........picture.........",adds.picture)
+    adds.save()
+    return render(request, 'polls/created.html', {})
 
 def searchHouse(request):
     getCountry = request.GET.getlist('country')
@@ -144,7 +173,15 @@ def login(request):
 
 def addadd(request):
     if request.user.is_authenticated:
-        return render(request, 'polls/addadd.html', {})
+        if request.method == 'POST':
+            form = AddsForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                return redirect('home')
+        else:
+            form = AddsForm()
+        return render(request, 'polls/addadd.html', {'form': form})
+
     else:
         return render(request, 'polls/warning_na.html', {})
 

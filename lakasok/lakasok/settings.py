@@ -95,10 +95,10 @@ LOGIN_REDIRECT_URL = '/home'
 
 #MEDIA_ROOT = [os.path.join(BASE_DIR, 'search/pictures/')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
-MEDIA_URL = '/search/'
+MEDIA_URL = '/pictures/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'search/static/webalkalmazas/')]
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'webalkalmazas/', 'search/static/webalkalmazas/')]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'search/static/webalkalmazas/')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'pictures')]
 
 
 TEMPLATES = [
@@ -110,6 +110,7 @@ TEMPLATES = [
         'context_processors': [
             'django.template.context_processors.debug',
             'django.template.context_processors.request',
+            'django.template.context_processors.media',
             'django.contrib.auth.context_processors.auth',
             'django.contrib.messages.context_processors.messages',
 

@@ -71,8 +71,9 @@
 				</tr>
 					<tr height = 600>
 						<td colspan = 5 valign = "top">
-							<form onsubmit="return verify()" action="/polls/created/">
+							<form onsubmit="return verify()" action="/polls/created/" method="post" enctype="multipart/form-data">
 							<p><br><br>
+								{% csrf_token %}
 							&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbspMegye:
 								<select name="country" id="idCountry">
 									<option value=""></option>
@@ -182,6 +183,7 @@
 									</td></tr>
 							</table>
 							<p align = "center"><input type="submit" class="button button1" value="Hirdetés felvétele"></p>
+
 							</form>
 						</td>
 					</tr>
